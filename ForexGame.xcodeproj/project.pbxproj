@@ -1,0 +1,495 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4DBEE0FA221D68FF009A4EA4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4DBEE0F9221D68FF009A4EA4 /* Localizable.strings */; };
+		4DBEE0FE221D68FF009A4EA4 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DBEE0FD221D68FF009A4EA4 /* Colors.xcassets */; };
+		4DBEE100221D68FF009A4EA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DBEE0FF221D68FF009A4EA4 /* Assets.xcassets */; };
+		4DBEE102221D68FF009A4EA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DBEE101221D68FF009A4EA4 /* LaunchScreen.storyboard */; };
+		4DBEE105221D68FF009A4EA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBEE104221D68FF009A4EA4 /* AppDelegate.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4DBEE0DD221D68FF009A4EA4 /* ForexGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForexGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4DBEE0E1221D68FF009A4EA4 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitkeep; path = Modules/.gitkeep; sourceTree = "<group>"; };
+		4DBEE0E3221D68FF009A4EA4 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitkeep; path = "Business Logic/.gitkeep"; sourceTree = "<group>"; };
+		4DBEE0E5221D68FF009A4EA4 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitkeep; path = Models/.gitkeep; sourceTree = "<group>"; };
+		4DBEE0E9221D68FF009A4EA4 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitkeep; path = Library/Extensions/Standart/.gitkeep; sourceTree = "<group>"; };
+		4DBEE0EB221D68FF009A4EA4 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitkeep; path = Library/Extensions/UIKit/.gitkeep; sourceTree = "<group>"; };
+		4DBEE0ED221D68FF009A4EA4 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitkeep; path = Library/Extensions/Frameworks/.gitkeep; sourceTree = "<group>"; };
+		4DBEE0EF221D68FF009A4EA4 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitkeep; path = Library/Utilities/.gitkeep; sourceTree = "<group>"; };
+		4DBEE0F2221D68FF009A4EA4 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitkeep; path = "UI/Basic Views/.gitkeep"; sourceTree = "<group>"; };
+		4DBEE0F4221D68FF009A4EA4 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitkeep; path = "UI/Complex Views/.gitkeep"; sourceTree = "<group>"; };
+		4DBEE0F6221D68FF009A4EA4 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; name = .swiftlint.yml; path = ../.swiftlint.yml; sourceTree = "<group>"; };
+		4DBEE0F9221D68FF009A4EA4 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = Resources/Localization/Localizable.strings; sourceTree = "<group>"; };
+		4DBEE0FC221D68FF009A4EA4 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitkeep; path = Resources/Fonts/.gitkeep; sourceTree = "<group>"; };
+		4DBEE0FD221D68FF009A4EA4 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Colors.xcassets; path = Resources/Colors.xcassets; sourceTree = "<group>"; };
+		4DBEE0FF221D68FF009A4EA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Resources/Assets.xcassets; sourceTree = "<group>"; };
+		4DBEE101221D68FF009A4EA4 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Resources/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4DBEE103221D68FF009A4EA4 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = Resources/Settings.bundle; sourceTree = "<group>"; };
+		4DBEE104221D68FF009A4EA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4DBEE106221D68FF009A4EA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4DBEE107221D68FF009A4EA4 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitignore; path = ../.gitignore; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4DBEE0D9221D68FF009A4EA4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4DBEE0D3221D68FF009A4EA4 = {
+			isa = PBXGroup;
+			children = (
+				4DBEE0DF221D68FF009A4EA4 /* ForexGame */,
+				4DBEE0DE221D68FF009A4EA4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4DBEE0DE221D68FF009A4EA4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4DBEE0DD221D68FF009A4EA4 /* ForexGame.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4DBEE0DF221D68FF009A4EA4 /* ForexGame */ = {
+			isa = PBXGroup;
+			children = (
+				4DBEE104221D68FF009A4EA4 /* AppDelegate.swift */,
+				4DBEE106221D68FF009A4EA4 /* Info.plist */,
+				4DBEE0E0221D68FF009A4EA4 /* Modules */,
+				4DBEE0E2221D68FF009A4EA4 /* Business Logic */,
+				4DBEE0E4221D68FF009A4EA4 /* Models */,
+				4DBEE0E6221D68FF009A4EA4 /* Library */,
+				4DBEE0F0221D68FF009A4EA4 /* UI */,
+				4DBEE0F5221D68FF009A4EA4 /* External */,
+				4DBEE0F7221D68FF009A4EA4 /* Resources */,
+			);
+			path = ForexGame;
+			sourceTree = "<group>";
+		};
+		4DBEE0E0221D68FF009A4EA4 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				4DBEE0E1221D68FF009A4EA4 /* .gitkeep */,
+			);
+			name = Modules;
+			sourceTree = "<group>";
+		};
+		4DBEE0E2221D68FF009A4EA4 /* Business Logic */ = {
+			isa = PBXGroup;
+			children = (
+				4DBEE0E3221D68FF009A4EA4 /* .gitkeep */,
+			);
+			name = "Business Logic";
+			sourceTree = "<group>";
+		};
+		4DBEE0E4221D68FF009A4EA4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4DBEE0E5221D68FF009A4EA4 /* .gitkeep */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		4DBEE0E6221D68FF009A4EA4 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				4DBEE0E7221D68FF009A4EA4 /* Extensions */,
+				4DBEE0EE221D68FF009A4EA4 /* Utilities */,
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
+		4DBEE0E7221D68FF009A4EA4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4DBEE0E8221D68FF009A4EA4 /* Standart */,
+				4DBEE0EA221D68FF009A4EA4 /* UIKit */,
+				4DBEE0EC221D68FF009A4EA4 /* Frameworks */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		4DBEE0E8221D68FF009A4EA4 /* Standart */ = {
+			isa = PBXGroup;
+			children = (
+				4DBEE0E9221D68FF009A4EA4 /* .gitkeep */,
+			);
+			name = Standart;
+			sourceTree = "<group>";
+		};
+		4DBEE0EA221D68FF009A4EA4 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				4DBEE0EB221D68FF009A4EA4 /* .gitkeep */,
+			);
+			name = UIKit;
+			sourceTree = "<group>";
+		};
+		4DBEE0EC221D68FF009A4EA4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4DBEE0ED221D68FF009A4EA4 /* .gitkeep */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4DBEE0EE221D68FF009A4EA4 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				4DBEE0EF221D68FF009A4EA4 /* .gitkeep */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		4DBEE0F0221D68FF009A4EA4 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				4DBEE0F1221D68FF009A4EA4 /* Basic Views */,
+				4DBEE0F3221D68FF009A4EA4 /* Complex Views */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		4DBEE0F1221D68FF009A4EA4 /* Basic Views */ = {
+			isa = PBXGroup;
+			children = (
+				4DBEE0F2221D68FF009A4EA4 /* .gitkeep */,
+			);
+			name = "Basic Views";
+			sourceTree = "<group>";
+		};
+		4DBEE0F3221D68FF009A4EA4 /* Complex Views */ = {
+			isa = PBXGroup;
+			children = (
+				4DBEE0F4221D68FF009A4EA4 /* .gitkeep */,
+			);
+			name = "Complex Views";
+			sourceTree = "<group>";
+		};
+		4DBEE0F5221D68FF009A4EA4 /* External */ = {
+			isa = PBXGroup;
+			children = (
+				4DBEE0F6221D68FF009A4EA4 /* .swiftlint.yml */,
+				4DBEE107221D68FF009A4EA4 /* .gitignore */,
+			);
+			name = External;
+			sourceTree = "<group>";
+		};
+		4DBEE0F7221D68FF009A4EA4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4DBEE0FD221D68FF009A4EA4 /* Colors.xcassets */,
+				4DBEE0FF221D68FF009A4EA4 /* Assets.xcassets */,
+				4DBEE101221D68FF009A4EA4 /* LaunchScreen.storyboard */,
+				4DBEE103221D68FF009A4EA4 /* Settings.bundle */,
+				4DBEE0F8221D68FF009A4EA4 /* Localization */,
+				4DBEE0FB221D68FF009A4EA4 /* Fonts */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		4DBEE0F8221D68FF009A4EA4 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				4DBEE0F9221D68FF009A4EA4 /* Localizable.strings */,
+			);
+			name = Localization;
+			sourceTree = "<group>";
+		};
+		4DBEE0FB221D68FF009A4EA4 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				4DBEE0FC221D68FF009A4EA4 /* .gitkeep */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4DBEE0DC221D68FF009A4EA4 /* ForexGame */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4DBEE10A221D68FF009A4EA4 /* Build configuration list for PBXNativeTarget "ForexGame" */;
+			buildPhases = (
+				4DBEE0D8221D68FF009A4EA4 /* Sources */,
+				4DBEE0D9221D68FF009A4EA4 /* Frameworks */,
+				4DBEE0DA221D68FF009A4EA4 /* Resources */,
+				4DBEE0DB221D68FF009A4EA4 /* Swift Lint */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ForexGame;
+			productName = ForexGame;
+			productReference = 4DBEE0DD221D68FF009A4EA4 /* ForexGame.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4DBEE0D4221D68FF009A4EA4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = AndreiSavchenko;
+				TargetAttributes = {
+					4DBEE0DC221D68FF009A4EA4 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = 4DBEE0D7221D68FF009A4EA4 /* Build configuration list for PBXProject "ForexGame" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 4DBEE0D3221D68FF009A4EA4;
+			productRefGroup = 4DBEE0DE221D68FF009A4EA4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4DBEE0DC221D68FF009A4EA4 /* ForexGame */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4DBEE0DA221D68FF009A4EA4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4DBEE0FA221D68FF009A4EA4 /* Localizable.strings in Resources */,
+				4DBEE102221D68FF009A4EA4 /* LaunchScreen.storyboard in Resources */,
+				4DBEE100221D68FF009A4EA4 /* Assets.xcassets in Resources */,
+				4DBEE0FE221D68FF009A4EA4 /* Colors.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4DBEE0DB221D68FF009A4EA4 /* Swift Lint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Swift Lint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint autocorrect\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, brew install swiftlint\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4DBEE0D8221D68FF009A4EA4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4DBEE105221D68FF009A4EA4 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		4DBEE108221D68FF009A4EA4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4DBEE109221D68FF009A4EA4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4DBEE10B221D68FF009A4EA4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ForexGame/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = jOK.ForexGame;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4DBEE10C221D68FF009A4EA4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ForexGame/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = jOK.ForexGame;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4DBEE0D7221D68FF009A4EA4 /* Build configuration list for PBXProject "ForexGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4DBEE108221D68FF009A4EA4 /* Debug */,
+				4DBEE109221D68FF009A4EA4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4DBEE10A221D68FF009A4EA4 /* Build configuration list for PBXNativeTarget "ForexGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4DBEE10B221D68FF009A4EA4 /* Debug */,
+				4DBEE10C221D68FF009A4EA4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4DBEE0D4221D68FF009A4EA4 /* Project object */;
+}
