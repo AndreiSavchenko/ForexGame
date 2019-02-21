@@ -12,6 +12,10 @@
 		4DBEE100221D68FF009A4EA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DBEE0FF221D68FF009A4EA4 /* Assets.xcassets */; };
 		4DBEE102221D68FF009A4EA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DBEE101221D68FF009A4EA4 /* LaunchScreen.storyboard */; };
 		4DBEE105221D68FF009A4EA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBEE104221D68FF009A4EA4 /* AppDelegate.swift */; };
+		4DBEE111221E00B1009A4EA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DBEE110221E00B1009A4EA4 /* Main.storyboard */; };
+		4DBEE113221E00CF009A4EA4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBEE112221E00CF009A4EA4 /* MainViewController.swift */; };
+		4DBEE115221E0852009A4EA4 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBEE114221E0852009A4EA4 /* RoundedView.swift */; };
+		4DBEE117221EDE42009A4EA4 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBEE116221EDE42009A4EA4 /* RoundedButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +39,10 @@
 		4DBEE104221D68FF009A4EA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DBEE106221D68FF009A4EA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4DBEE107221D68FF009A4EA4 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitignore; path = ../.gitignore; sourceTree = "<group>"; };
+		4DBEE110221E00B1009A4EA4 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		4DBEE112221E00CF009A4EA4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		4DBEE114221E0852009A4EA4 /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
+		4DBEE116221EDE42009A4EA4 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				4DBEE0E1221D68FF009A4EA4 /* .gitkeep */,
+				4DBEE10F221E0077009A4EA4 /* Main */,
 			);
 			name = Modules;
 			sourceTree = "<group>";
@@ -92,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				4DBEE0E3221D68FF009A4EA4 /* .gitkeep */,
+				4DBEE10E221D88D7009A4EA4 /* API */,
 			);
 			name = "Business Logic";
 			sourceTree = "<group>";
@@ -100,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				4DBEE0E5221D68FF009A4EA4 /* .gitkeep */,
+				4DBEE10D221D8847009A4EA4 /* CoreData */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -168,6 +179,8 @@
 			isa = PBXGroup;
 			children = (
 				4DBEE0F2221D68FF009A4EA4 /* .gitkeep */,
+				4DBEE114221E0852009A4EA4 /* RoundedView.swift */,
+				4DBEE116221EDE42009A4EA4 /* RoundedButton.swift */,
 			);
 			name = "Basic Views";
 			sourceTree = "<group>";
@@ -216,6 +229,29 @@
 				4DBEE0FC221D68FF009A4EA4 /* .gitkeep */,
 			);
 			name = Fonts;
+			sourceTree = "<group>";
+		};
+		4DBEE10D221D8847009A4EA4 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		4DBEE10E221D88D7009A4EA4 /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		4DBEE10F221E0077009A4EA4 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				4DBEE110221E00B1009A4EA4 /* Main.storyboard */,
+				4DBEE112221E00CF009A4EA4 /* MainViewController.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,6 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DBEE0FA221D68FF009A4EA4 /* Localizable.strings in Resources */,
+				4DBEE111221E00B1009A4EA4 /* Main.storyboard in Resources */,
 				4DBEE102221D68FF009A4EA4 /* LaunchScreen.storyboard in Resources */,
 				4DBEE100221D68FF009A4EA4 /* Assets.xcassets in Resources */,
 				4DBEE0FE221D68FF009A4EA4 /* Colors.xcassets in Resources */,
@@ -312,6 +349,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DBEE105221D68FF009A4EA4 /* AppDelegate.swift in Sources */,
+				4DBEE113221E00CF009A4EA4 /* MainViewController.swift in Sources */,
+				4DBEE115221E0852009A4EA4 /* RoundedView.swift in Sources */,
+				4DBEE117221EDE42009A4EA4 /* RoundedButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

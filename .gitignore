@@ -22,11 +22,11 @@ nbproject
 Thumbs.db
 *~
 xcuserstate
-xcuserdata
-Pods/
+
+
 contents.xcworkspacedata
 Carthage/
-vendor/
-fastlane/report.xml
-build/
+
+
+
 WorkspaceSettings.xcsettings
