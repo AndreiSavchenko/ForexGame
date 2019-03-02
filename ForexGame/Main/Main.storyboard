@@ -14,7 +14,7 @@
         <!--EURUSD-->
         <scene sceneID="Q2G-n3-u6o">
             <objects>
-                <viewController storyboardIdentifier="MainViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Q2B-DB-QBc" customClass="MainViewController" customModule="ForexGame" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EurUsdViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Q2B-DB-QBc" customClass="EurUsdViewController" customModule="ForexGame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="y9o-EX-0Zi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -166,7 +166,7 @@
                                     <constraint firstAttribute="bottom" secondItem="St9-1L-cWx" secondAttribute="bottom" constant="10" id="jeA-E5-IFY"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NVw-8f-9Ub" customClass="RoundedView" customModule="ForexGame" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NVw-8f-9Ub" customClass="LineChartView" customModule="Charts">
                                 <rect key="frame" x="10" y="140" width="355" height="308"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Здесь будет график EURUSD" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q9b-g6-f4Y">
@@ -235,15 +235,18 @@
                         <viewLayoutGuide key="safeArea" id="c8V-W9-52a"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="EURUSD" id="uUD-Fw-GIs"/>
+                    <connections>
+                        <outlet property="eurUsdLineChartView" destination="NVw-8f-9Ub" id="yRq-fO-u5f"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G6P-rd-CTD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1124" y="5.8470764617691158"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Mai-->
         <scene sceneID="tDN-4S-aDz">
             <objects>
-                <tabBarController id="X1w-zG-mGM" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="X1w-zG-mGM" customClass="Mai" customModule="ForexGame" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" id="FSe-mN-C6H">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -264,7 +267,7 @@
         <!--GBPUSD-->
         <scene sceneID="hhi-SC-odp">
             <objects>
-                <viewController id="TkE-C8-3Iu" customClass="MainViewController" customModule="ForexGame" sceneMemberID="viewController">
+                <viewController id="TkE-C8-3Iu" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="284-oP-H6P">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
