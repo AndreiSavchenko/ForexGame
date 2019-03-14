@@ -15,19 +15,63 @@ class EurUsdViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setChartValues()
+
+        let prices = [1.23000, 1.23010, 1.23020, 1.23050, 1.23040,
+                      1.23030, 1.23020, 1.23050, 1.23080, 1.23130,
+                      1.23120, 1.23090, 1.23060, 1.23100, 1.23140,
+                      1.23190, 1.23220, 1.23200, 1.23190, 1.23200]
+        setChart(prices: prices)
 
     }
 
-    func setChartValues(_ count: Int = 20) {
-        let values = (0..<count).map { (i) -> ChartDataEntry in
-            let val = Double(arc4random_uniform(UInt32(count))+3)
-            return ChartDataEntry(x: Double(i), y: val)
+    func setChart(prices: [Double]) {
+
+        var dataEntries: [ChartDataEntry] = []
+
+        for i in 0..<prices.count {
+            let dataEntry = ChartDataEntry(x: Double(i), y: prices[i])
+            dataEntries.append(dataEntry)
         }
-        let set = LineChartDataSet(values: values, label: "Set")
-        let data = LineChartData(dataSet: set)
 
-        self.eurUsdLineChartView.data = data
+        let lineChartDataSet = LineChartDataSet(values: dataEntries, label: "EUR/USD")
+        lineChartDataSet.mode = .cubicBezier
+        lineChartDataSet.drawCirclesEnabled = false         // без кругов
+        lineChartDataSet.colors = [NSUIColor.white]
+        lineChartDataSet.lineWidth = 2.5
+        lineChartDataSet.cubicIntensity = 0.2
+        lineChartDataSet.drawValuesEnabled = false
+
+        let gradient = getGradientFilling()
+        lineChartDataSet.fill = Fill.fillWithLinearGradient(gradient, angle: 90.0)
+        lineChartDataSet.drawFilledEnabled = true
+
+        let lineChartData = LineChartData(dataSet: lineChartDataSet)
+        eurUsdLineChartView.data = lineChartData
+        eurUsdLineChartView.setScaleEnabled(false)
+        eurUsdLineChartView.animate(xAxisDuration: 1.5)
+        eurUsdLineChartView.drawGridBackgroundEnabled = false
+        eurUsdLineChartView.xAxis.drawAxisLineEnabled = false
+        eurUsdLineChartView.xAxis.drawGridLinesEnabled = false
+        eurUsdLineChartView.leftAxis.drawAxisLineEnabled = false
+        eurUsdLineChartView.leftAxis.drawGridLinesEnabled = false
+        eurUsdLineChartView.rightAxis.drawAxisLineEnabled = false
+        eurUsdLineChartView.rightAxis.drawGridLinesEnabled = false
+        eurUsdLineChartView.legend.enabled = false
+        eurUsdLineChartView.xAxis.enabled = false
+        eurUsdLineChartView.leftAxis.enabled = false
+        eurUsdLineChartView.xAxis.drawLabelsEnabled = false
     }
 
+}
+
+private func getGradientFilling() -> CGGradient {
+//    let colorTop = UIColor(red: 141/255, green: 133/255, blue: 220/255, alpha: 1).cgColor
+    let colorTop = UIColor(named: "ColorTextWhite")!.cgColor
+    let colorBotton = UIColor(named: "1ColorAquaDark")!.cgColor
+    let colorsGradient = [colorTop, colorBotton] as CFArray
+    let colorLocations: [CGFloat] = [0.7, 0.0]
+
+    return CGGradient.init(colorsSpace: CGColorSpaceCreateDeviceRGB(),
+                           colors: colorsGradient,
+                           locations: colorLocations)!
 }

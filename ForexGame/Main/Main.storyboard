@@ -166,20 +166,20 @@
                                     <constraint firstAttribute="bottom" secondItem="St9-1L-cWx" secondAttribute="bottom" constant="10" id="jeA-E5-IFY"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NVw-8f-9Ub" customClass="LineChartView" customModule="Charts">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dj9-Z1-SdD" customClass="RoundedView" customModule="ForexGame" customModuleProvider="target">
                                 <rect key="frame" x="10" y="140" width="355" height="308"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Здесь будет график EURUSD" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q9b-g6-f4Y">
-                                        <rect key="frame" x="98" y="133.5" width="159" height="41"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" name="ColorTextWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NVw-8f-9Ub" customClass="LineChartView" customModule="Charts">
+                                        <rect key="frame" x="0.0" y="7" width="355" height="294"/>
+                                        <color key="backgroundColor" name="1ColorAquaDark"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" name="1ColorAquaDark"/>
                                 <constraints>
-                                    <constraint firstItem="Q9b-g6-f4Y" firstAttribute="centerX" secondItem="NVw-8f-9Ub" secondAttribute="centerX" id="54Y-7c-K8s"/>
-                                    <constraint firstItem="Q9b-g6-f4Y" firstAttribute="centerY" secondItem="NVw-8f-9Ub" secondAttribute="centerY" id="zlY-8q-Gk8"/>
+                                    <constraint firstItem="NVw-8f-9Ub" firstAttribute="leading" secondItem="Dj9-Z1-SdD" secondAttribute="leading" id="W21-tK-fc3"/>
+                                    <constraint firstAttribute="bottom" secondItem="NVw-8f-9Ub" secondAttribute="bottom" constant="7" id="XPG-26-1ju"/>
+                                    <constraint firstItem="NVw-8f-9Ub" firstAttribute="top" secondItem="Dj9-Z1-SdD" secondAttribute="top" constant="7" id="p3N-Z3-MDn"/>
+                                    <constraint firstAttribute="trailing" secondItem="NVw-8f-9Ub" secondAttribute="trailing" id="zOH-GB-z4K"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vAb-Hc-clK" customClass="RoundedView" customModule="ForexGame" customModuleProvider="target">
@@ -221,22 +221,22 @@
                         </subviews>
                         <color key="backgroundColor" name="1ColorBlack"/>
                         <constraints>
-                            <constraint firstItem="NVw-8f-9Ub" firstAttribute="leading" secondItem="c8V-W9-52a" secondAttribute="leading" constant="10" id="HfW-Ow-lMx"/>
-                            <constraint firstItem="vAb-Hc-clK" firstAttribute="top" secondItem="NVw-8f-9Ub" secondAttribute="bottom" constant="10" id="SDK-WM-EjJ"/>
+                            <constraint firstItem="c8V-W9-52a" firstAttribute="trailing" secondItem="Dj9-Z1-SdD" secondAttribute="trailing" constant="10" id="EBs-yj-q4X"/>
+                            <constraint firstItem="Dj9-Z1-SdD" firstAttribute="leading" secondItem="c8V-W9-52a" secondAttribute="leading" constant="10" id="O1Y-sf-xAs"/>
                             <constraint firstItem="c8V-W9-52a" firstAttribute="trailing" secondItem="vAb-Hc-clK" secondAttribute="trailing" constant="10" id="YGA-05-cz2"/>
                             <constraint firstItem="vAb-Hc-clK" firstAttribute="leading" secondItem="c8V-W9-52a" secondAttribute="leading" constant="10" id="ZLT-J7-6hX"/>
+                            <constraint firstItem="Dj9-Z1-SdD" firstAttribute="top" secondItem="ghV-us-9Rj" secondAttribute="bottom" constant="10" id="ZsB-Sf-AKn"/>
+                            <constraint firstItem="vAb-Hc-clK" firstAttribute="top" secondItem="Dj9-Z1-SdD" secondAttribute="bottom" constant="10" id="eJq-Sc-VQK"/>
                             <constraint firstItem="c8V-W9-52a" firstAttribute="bottom" secondItem="vAb-Hc-clK" secondAttribute="bottom" constant="10" id="fTn-87-4zQ"/>
                             <constraint firstItem="ghV-us-9Rj" firstAttribute="top" secondItem="c8V-W9-52a" secondAttribute="top" constant="10" id="meE-2n-K2n"/>
                             <constraint firstItem="ghV-us-9Rj" firstAttribute="leading" secondItem="c8V-W9-52a" secondAttribute="leading" constant="10" id="oPl-mo-Klt"/>
-                            <constraint firstItem="NVw-8f-9Ub" firstAttribute="top" secondItem="ghV-us-9Rj" secondAttribute="bottom" constant="10" id="rps-i7-CaB"/>
-                            <constraint firstItem="c8V-W9-52a" firstAttribute="trailing" secondItem="NVw-8f-9Ub" secondAttribute="trailing" constant="10" id="trI-gm-kwW"/>
                             <constraint firstItem="c8V-W9-52a" firstAttribute="trailing" secondItem="ghV-us-9Rj" secondAttribute="trailing" constant="10" id="xkg-RN-f2e"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="c8V-W9-52a"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="EURUSD" id="uUD-Fw-GIs"/>
                     <connections>
-                        <outlet property="eurUsdLineChartView" destination="NVw-8f-9Ub" id="yRq-fO-u5f"/>
+                        <outlet property="eurUsdLineChartView" destination="NVw-8f-9Ub" id="vZ8-Dx-xdL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G6P-rd-CTD" userLabel="First Responder" sceneMemberID="firstResponder"/>
