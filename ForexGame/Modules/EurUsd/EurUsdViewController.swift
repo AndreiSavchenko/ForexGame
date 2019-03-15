@@ -21,6 +21,13 @@ class EurUsdViewController: UIViewController {
                       1.23120, 1.23090, 1.23060, 1.23100, 1.23140,
                       1.23190, 1.23220, 1.23200, 1.23190, 1.23200]
         setChart(prices: prices)
+        
+//        let a = Date(timeIntervalSince1970: 1552585731.857)
+//        print(a)
+        
+//        let decoder = JSONDecoder()
+//        decoder.dateDecodingStrategy = .millisecondsSince1970
+//        decoder.decode(Price.self, from: data)
 
     }
 

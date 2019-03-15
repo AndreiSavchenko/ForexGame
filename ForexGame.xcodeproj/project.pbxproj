@@ -25,22 +25,22 @@
 		333EFAC6B054C70512DAC5FC /* libPods-ForexGame.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ForexGame.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D69085D222B35130086A42D /* EurUsdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EurUsdViewController.swift; sourceTree = "<group>"; };
 		4DBEE0DD221D68FF009A4EA4 /* ForexGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForexGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4DBEE0E1221D68FF009A4EA4 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitkeep; path = Modules/.gitkeep; sourceTree = "<group>"; };
-		4DBEE0E3221D68FF009A4EA4 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitkeep; path = "Business Logic/.gitkeep"; sourceTree = "<group>"; };
-		4DBEE0E5221D68FF009A4EA4 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitkeep; path = Models/.gitkeep; sourceTree = "<group>"; };
-		4DBEE0E9221D68FF009A4EA4 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitkeep; path = Library/Extensions/Standart/.gitkeep; sourceTree = "<group>"; };
-		4DBEE0EB221D68FF009A4EA4 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitkeep; path = Library/Extensions/UIKit/.gitkeep; sourceTree = "<group>"; };
-		4DBEE0ED221D68FF009A4EA4 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitkeep; path = Library/Extensions/Frameworks/.gitkeep; sourceTree = "<group>"; };
-		4DBEE0EF221D68FF009A4EA4 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitkeep; path = Library/Utilities/.gitkeep; sourceTree = "<group>"; };
-		4DBEE0F2221D68FF009A4EA4 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitkeep; path = "UI/Basic Views/.gitkeep"; sourceTree = "<group>"; };
-		4DBEE0F4221D68FF009A4EA4 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitkeep; path = "UI/Complex Views/.gitkeep"; sourceTree = "<group>"; };
+		4DBEE0E1221D68FF009A4EA4 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitkeep; path = .gitkeep; sourceTree = "<group>"; };
+		4DBEE0E3221D68FF009A4EA4 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitkeep; path = .gitkeep; sourceTree = "<group>"; };
+		4DBEE0E5221D68FF009A4EA4 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitkeep; path = .gitkeep; sourceTree = "<group>"; };
+		4DBEE0E9221D68FF009A4EA4 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitkeep; path = .gitkeep; sourceTree = "<group>"; };
+		4DBEE0EB221D68FF009A4EA4 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitkeep; path = .gitkeep; sourceTree = "<group>"; };
+		4DBEE0ED221D68FF009A4EA4 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitkeep; path = .gitkeep; sourceTree = "<group>"; };
+		4DBEE0EF221D68FF009A4EA4 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitkeep; path = .gitkeep; sourceTree = "<group>"; };
+		4DBEE0F2221D68FF009A4EA4 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitkeep; path = .gitkeep; sourceTree = "<group>"; };
+		4DBEE0F4221D68FF009A4EA4 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitkeep; path = .gitkeep; sourceTree = "<group>"; };
 		4DBEE0F6221D68FF009A4EA4 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; name = .swiftlint.yml; path = ../.swiftlint.yml; sourceTree = "<group>"; };
-		4DBEE0F9221D68FF009A4EA4 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = Resources/Localization/Localizable.strings; sourceTree = "<group>"; };
-		4DBEE0FC221D68FF009A4EA4 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitkeep; path = Resources/Fonts/.gitkeep; sourceTree = "<group>"; };
-		4DBEE0FD221D68FF009A4EA4 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Colors.xcassets; path = Resources/Colors.xcassets; sourceTree = "<group>"; };
-		4DBEE0FF221D68FF009A4EA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Resources/Assets.xcassets; sourceTree = "<group>"; };
-		4DBEE101221D68FF009A4EA4 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Resources/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		4DBEE103221D68FF009A4EA4 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = Resources/Settings.bundle; sourceTree = "<group>"; };
+		4DBEE0F9221D68FF009A4EA4 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		4DBEE0FC221D68FF009A4EA4 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitkeep; path = .gitkeep; sourceTree = "<group>"; };
+		4DBEE0FD221D68FF009A4EA4 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Colors.xcassets; path = Colors.xcassets; sourceTree = "<group>"; };
+		4DBEE0FF221D68FF009A4EA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Assets.xcassets; sourceTree = "<group>"; };
+		4DBEE101221D68FF009A4EA4 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4DBEE103221D68FF009A4EA4 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = Settings.bundle; sourceTree = "<group>"; };
 		4DBEE104221D68FF009A4EA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DBEE106221D68FF009A4EA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4DBEE107221D68FF009A4EA4 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitignore; path = ../.gitignore; sourceTree = "<group>"; };
@@ -121,6 +121,7 @@
 				4DBEE10F221E0077009A4EA4 /* Main */,
 			);
 			name = Modules;
+			path = Modules;
 			sourceTree = "<group>";
 		};
 		4DBEE0E2221D68FF009A4EA4 /* Business Logic */ = {
@@ -130,6 +131,7 @@
 				4DBEE10E221D88D7009A4EA4 /* API */,
 			);
 			name = "Business Logic";
+			path = "Business Logic";
 			sourceTree = "<group>";
 		};
 		4DBEE0E4221D68FF009A4EA4 /* Models */ = {
@@ -139,6 +141,7 @@
 				4DBEE10D221D8847009A4EA4 /* CoreData */,
 			);
 			name = Models;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		4DBEE0E6221D68FF009A4EA4 /* Library */ = {
@@ -148,6 +151,7 @@
 				4DBEE0EE221D68FF009A4EA4 /* Utilities */,
 			);
 			name = Library;
+			path = Library;
 			sourceTree = "<group>";
 		};
 		4DBEE0E7221D68FF009A4EA4 /* Extensions */ = {
@@ -158,6 +162,7 @@
 				4DBEE0EC221D68FF009A4EA4 /* Frameworks */,
 			);
 			name = Extensions;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		4DBEE0E8221D68FF009A4EA4 /* Standart */ = {
@@ -166,6 +171,7 @@
 				4DBEE0E9221D68FF009A4EA4 /* .gitkeep */,
 			);
 			name = Standart;
+			path = Standart;
 			sourceTree = "<group>";
 		};
 		4DBEE0EA221D68FF009A4EA4 /* UIKit */ = {
@@ -174,6 +180,7 @@
 				4DBEE0EB221D68FF009A4EA4 /* .gitkeep */,
 			);
 			name = UIKit;
+			path = UIKit;
 			sourceTree = "<group>";
 		};
 		4DBEE0EC221D68FF009A4EA4 /* Frameworks */ = {
@@ -182,6 +189,7 @@
 				4DBEE0ED221D68FF009A4EA4 /* .gitkeep */,
 			);
 			name = Frameworks;
+			path = Frameworks;
 			sourceTree = "<group>";
 		};
 		4DBEE0EE221D68FF009A4EA4 /* Utilities */ = {
@@ -190,6 +198,7 @@
 				4DBEE0EF221D68FF009A4EA4 /* .gitkeep */,
 			);
 			name = Utilities;
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		4DBEE0F0221D68FF009A4EA4 /* UI */ = {
@@ -199,6 +208,7 @@
 				4DBEE0F3221D68FF009A4EA4 /* Complex Views */,
 			);
 			name = UI;
+			path = UI;
 			sourceTree = "<group>";
 		};
 		4DBEE0F1221D68FF009A4EA4 /* Basic Views */ = {
@@ -209,6 +219,7 @@
 				4DBEE116221EDE42009A4EA4 /* RoundedButton.swift */,
 			);
 			name = "Basic Views";
+			path = "Basic Views";
 			sourceTree = "<group>";
 		};
 		4DBEE0F3221D68FF009A4EA4 /* Complex Views */ = {
@@ -217,6 +228,7 @@
 				4DBEE0F4221D68FF009A4EA4 /* .gitkeep */,
 			);
 			name = "Complex Views";
+			path = "Complex Views";
 			sourceTree = "<group>";
 		};
 		4DBEE0F5221D68FF009A4EA4 /* External */ = {
@@ -239,6 +251,7 @@
 				4DBEE0FB221D68FF009A4EA4 /* Fonts */,
 			);
 			name = Resources;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		4DBEE0F8221D68FF009A4EA4 /* Localization */ = {
@@ -247,6 +260,7 @@
 				4DBEE0F9221D68FF009A4EA4 /* Localizable.strings */,
 			);
 			name = Localization;
+			path = Localization;
 			sourceTree = "<group>";
 		};
 		4DBEE0FB221D68FF009A4EA4 /* Fonts */ = {
@@ -255,6 +269,7 @@
 				4DBEE0FC221D68FF009A4EA4 /* .gitkeep */,
 			);
 			name = Fonts;
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		4DBEE10D221D8847009A4EA4 /* CoreData */ = {
