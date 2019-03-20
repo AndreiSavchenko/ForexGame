@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		2D3867D3FBCBEDA16796565B /* libPods-ForexGame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 333EFAC6B054C70512DAC5FC /* libPods-ForexGame.a */; };
 		4D69085E222B35130086A42D /* EurUsdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D69085D222B35130086A42D /* EurUsdViewController.swift */; };
+		4D89B4E32242AFCC0015DC4D /* ModelPoint.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4D89B4E12242AFCC0015DC4D /* ModelPoint.xcdatamodeld */; };
+		4D89B4EA2242B2D90015DC4D /* Point+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D89B4E82242B2D90015DC4D /* Point+CoreDataClass.swift */; };
+		4D89B4EB2242B2D90015DC4D /* Point+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D89B4E92242B2D90015DC4D /* Point+CoreDataProperties.swift */; };
+		4D89B4ED2242B3DF0015DC4D /* CoreDataStack..swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D89B4EC2242B3DF0015DC4D /* CoreDataStack..swift */; };
 		4DBEE0FA221D68FF009A4EA4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4DBEE0F9221D68FF009A4EA4 /* Localizable.strings */; };
 		4DBEE0FE221D68FF009A4EA4 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DBEE0FD221D68FF009A4EA4 /* Colors.xcassets */; };
 		4DBEE100221D68FF009A4EA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DBEE0FF221D68FF009A4EA4 /* Assets.xcassets */; };
@@ -24,23 +28,27 @@
 		1E7561526940559531283BB0 /* Pods-ForexGame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForexGame.debug.xcconfig"; path = "Target Support Files/Pods-ForexGame/Pods-ForexGame.debug.xcconfig"; sourceTree = "<group>"; };
 		333EFAC6B054C70512DAC5FC /* libPods-ForexGame.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ForexGame.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D69085D222B35130086A42D /* EurUsdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EurUsdViewController.swift; sourceTree = "<group>"; };
+		4D89B4E22242AFCC0015DC4D /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		4D89B4E82242B2D90015DC4D /* Point+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Point+CoreDataClass.swift"; sourceTree = "<group>"; };
+		4D89B4E92242B2D90015DC4D /* Point+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Point+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		4D89B4EC2242B3DF0015DC4D /* CoreDataStack..swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack..swift; sourceTree = "<group>"; };
 		4DBEE0DD221D68FF009A4EA4 /* ForexGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForexGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4DBEE0E1221D68FF009A4EA4 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitkeep; path = .gitkeep; sourceTree = "<group>"; };
-		4DBEE0E3221D68FF009A4EA4 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitkeep; path = .gitkeep; sourceTree = "<group>"; };
-		4DBEE0E5221D68FF009A4EA4 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitkeep; path = .gitkeep; sourceTree = "<group>"; };
-		4DBEE0E9221D68FF009A4EA4 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitkeep; path = .gitkeep; sourceTree = "<group>"; };
-		4DBEE0EB221D68FF009A4EA4 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitkeep; path = .gitkeep; sourceTree = "<group>"; };
-		4DBEE0ED221D68FF009A4EA4 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitkeep; path = .gitkeep; sourceTree = "<group>"; };
-		4DBEE0EF221D68FF009A4EA4 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitkeep; path = .gitkeep; sourceTree = "<group>"; };
-		4DBEE0F2221D68FF009A4EA4 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitkeep; path = .gitkeep; sourceTree = "<group>"; };
-		4DBEE0F4221D68FF009A4EA4 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitkeep; path = .gitkeep; sourceTree = "<group>"; };
+		4DBEE0E1221D68FF009A4EA4 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		4DBEE0E3221D68FF009A4EA4 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		4DBEE0E5221D68FF009A4EA4 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		4DBEE0E9221D68FF009A4EA4 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		4DBEE0EB221D68FF009A4EA4 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		4DBEE0ED221D68FF009A4EA4 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		4DBEE0EF221D68FF009A4EA4 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		4DBEE0F2221D68FF009A4EA4 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		4DBEE0F4221D68FF009A4EA4 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		4DBEE0F6221D68FF009A4EA4 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; name = .swiftlint.yml; path = ../.swiftlint.yml; sourceTree = "<group>"; };
-		4DBEE0F9221D68FF009A4EA4 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = Localizable.strings; sourceTree = "<group>"; };
-		4DBEE0FC221D68FF009A4EA4 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitkeep; path = .gitkeep; sourceTree = "<group>"; };
-		4DBEE0FD221D68FF009A4EA4 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Colors.xcassets; path = Colors.xcassets; sourceTree = "<group>"; };
-		4DBEE0FF221D68FF009A4EA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Assets.xcassets; sourceTree = "<group>"; };
-		4DBEE101221D68FF009A4EA4 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		4DBEE103221D68FF009A4EA4 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = Settings.bundle; sourceTree = "<group>"; };
+		4DBEE0F9221D68FF009A4EA4 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		4DBEE0FC221D68FF009A4EA4 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		4DBEE0FD221D68FF009A4EA4 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		4DBEE0FF221D68FF009A4EA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4DBEE101221D68FF009A4EA4 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4DBEE103221D68FF009A4EA4 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		4DBEE104221D68FF009A4EA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DBEE106221D68FF009A4EA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4DBEE107221D68FF009A4EA4 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitignore; path = ../.gitignore; sourceTree = "<group>"; };
@@ -120,7 +128,6 @@
 				4D69085C222B34C40086A42D /* EurUsd */,
 				4DBEE10F221E0077009A4EA4 /* Main */,
 			);
-			name = Modules;
 			path = Modules;
 			sourceTree = "<group>";
 		};
@@ -130,7 +137,6 @@
 				4DBEE0E3221D68FF009A4EA4 /* .gitkeep */,
 				4DBEE10E221D88D7009A4EA4 /* API */,
 			);
-			name = "Business Logic";
 			path = "Business Logic";
 			sourceTree = "<group>";
 		};
@@ -140,7 +146,6 @@
 				4DBEE0E5221D68FF009A4EA4 /* .gitkeep */,
 				4DBEE10D221D8847009A4EA4 /* CoreData */,
 			);
-			name = Models;
 			path = Models;
 			sourceTree = "<group>";
 		};
@@ -150,7 +155,6 @@
 				4DBEE0E7221D68FF009A4EA4 /* Extensions */,
 				4DBEE0EE221D68FF009A4EA4 /* Utilities */,
 			);
-			name = Library;
 			path = Library;
 			sourceTree = "<group>";
 		};
@@ -161,7 +165,6 @@
 				4DBEE0EA221D68FF009A4EA4 /* UIKit */,
 				4DBEE0EC221D68FF009A4EA4 /* Frameworks */,
 			);
-			name = Extensions;
 			path = Extensions;
 			sourceTree = "<group>";
 		};
@@ -170,7 +173,6 @@
 			children = (
 				4DBEE0E9221D68FF009A4EA4 /* .gitkeep */,
 			);
-			name = Standart;
 			path = Standart;
 			sourceTree = "<group>";
 		};
@@ -179,7 +181,6 @@
 			children = (
 				4DBEE0EB221D68FF009A4EA4 /* .gitkeep */,
 			);
-			name = UIKit;
 			path = UIKit;
 			sourceTree = "<group>";
 		};
@@ -188,7 +189,6 @@
 			children = (
 				4DBEE0ED221D68FF009A4EA4 /* .gitkeep */,
 			);
-			name = Frameworks;
 			path = Frameworks;
 			sourceTree = "<group>";
 		};
@@ -197,7 +197,6 @@
 			children = (
 				4DBEE0EF221D68FF009A4EA4 /* .gitkeep */,
 			);
-			name = Utilities;
 			path = Utilities;
 			sourceTree = "<group>";
 		};
@@ -207,7 +206,6 @@
 				4DBEE0F1221D68FF009A4EA4 /* Basic Views */,
 				4DBEE0F3221D68FF009A4EA4 /* Complex Views */,
 			);
-			name = UI;
 			path = UI;
 			sourceTree = "<group>";
 		};
@@ -218,7 +216,6 @@
 				4DBEE114221E0852009A4EA4 /* RoundedView.swift */,
 				4DBEE116221EDE42009A4EA4 /* RoundedButton.swift */,
 			);
-			name = "Basic Views";
 			path = "Basic Views";
 			sourceTree = "<group>";
 		};
@@ -227,7 +224,6 @@
 			children = (
 				4DBEE0F4221D68FF009A4EA4 /* .gitkeep */,
 			);
-			name = "Complex Views";
 			path = "Complex Views";
 			sourceTree = "<group>";
 		};
@@ -250,7 +246,6 @@
 				4DBEE0F8221D68FF009A4EA4 /* Localization */,
 				4DBEE0FB221D68FF009A4EA4 /* Fonts */,
 			);
-			name = Resources;
 			path = Resources;
 			sourceTree = "<group>";
 		};
@@ -259,7 +254,6 @@
 			children = (
 				4DBEE0F9221D68FF009A4EA4 /* Localizable.strings */,
 			);
-			name = Localization;
 			path = Localization;
 			sourceTree = "<group>";
 		};
@@ -268,13 +262,16 @@
 			children = (
 				4DBEE0FC221D68FF009A4EA4 /* .gitkeep */,
 			);
-			name = Fonts;
 			path = Fonts;
 			sourceTree = "<group>";
 		};
 		4DBEE10D221D8847009A4EA4 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				4D89B4E12242AFCC0015DC4D /* ModelPoint.xcdatamodeld */,
+				4D89B4EC2242B3DF0015DC4D /* CoreDataStack..swift */,
+				4D89B4E82242B2D90015DC4D /* Point+CoreDataClass.swift */,
+				4D89B4E92242B2D90015DC4D /* Point+CoreDataProperties.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -423,9 +420,13 @@
 			files = (
 				4DBEE105221D68FF009A4EA4 /* AppDelegate.swift in Sources */,
 				4DBEE113221E00CF009A4EA4 /* MainViewController.swift in Sources */,
+				4D89B4EA2242B2D90015DC4D /* Point+CoreDataClass.swift in Sources */,
 				4DBEE115221E0852009A4EA4 /* RoundedView.swift in Sources */,
 				4DBEE117221EDE42009A4EA4 /* RoundedButton.swift in Sources */,
 				4D69085E222B35130086A42D /* EurUsdViewController.swift in Sources */,
+				4D89B4EB2242B2D90015DC4D /* Point+CoreDataProperties.swift in Sources */,
+				4D89B4ED2242B3DF0015DC4D /* CoreDataStack..swift in Sources */,
+				4D89B4E32242AFCC0015DC4D /* ModelPoint.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -606,6 +607,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4D89B4E12242AFCC0015DC4D /* ModelPoint.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4D89B4E22242AFCC0015DC4D /* Model.xcdatamodel */,
+			);
+			currentVersion = 4D89B4E22242AFCC0015DC4D /* Model.xcdatamodel */;
+			path = ModelPoint.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 4DBEE0D4221D68FF009A4EA4 /* Project object */;
 }
