@@ -1,18 +1,32 @@
 PODS:
+  - Alamofire (4.8.1)
   - Charts (3.2.2):
     - Charts/Core (= 3.2.2)
   - Charts/Core (3.2.2)
+  - Moya (12.0.1):
+    - Moya/Core (= 12.0.1)
+  - Moya/Core (12.0.1):
+    - Alamofire (~> 4.1)
+    - Result (~> 4.0)
+  - Result (4.1.0)
 
 DEPENDENCIES:
   - Charts
+  - Moya (~> 12.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Alamofire
     - Charts
+    - Moya
+    - Result
 
 SPEC CHECKSUMS:
+  Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
   Charts: f69cf0518b6d1d62608ca504248f1bbe0b6ae77e
+  Moya: cf730b3cd9e005401ef37a85143aa141a12fd38f
+  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
 
-PODFILE CHECKSUM: 0663d2b15da2a8f4ee2916a8fefb028947d1d12d
+PODFILE CHECKSUM: 26371378468bee03e545d29fce4ba3e5637e1344
 
 COCOAPODS: 1.6.1

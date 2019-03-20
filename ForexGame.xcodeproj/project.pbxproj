@@ -13,6 +13,7 @@
 		4D89B4EA2242B2D90015DC4D /* Point+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D89B4E82242B2D90015DC4D /* Point+CoreDataClass.swift */; };
 		4D89B4EB2242B2D90015DC4D /* Point+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D89B4E92242B2D90015DC4D /* Point+CoreDataProperties.swift */; };
 		4D89B4ED2242B3DF0015DC4D /* CoreDataStack..swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D89B4EC2242B3DF0015DC4D /* CoreDataStack..swift */; };
+		4D89B4EF2242DFF40015DC4D /* FreeForexAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D89B4EE2242DFF40015DC4D /* FreeForexAPI.swift */; };
 		4DBEE0FA221D68FF009A4EA4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4DBEE0F9221D68FF009A4EA4 /* Localizable.strings */; };
 		4DBEE0FE221D68FF009A4EA4 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DBEE0FD221D68FF009A4EA4 /* Colors.xcassets */; };
 		4DBEE100221D68FF009A4EA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DBEE0FF221D68FF009A4EA4 /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 		4D89B4E82242B2D90015DC4D /* Point+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Point+CoreDataClass.swift"; sourceTree = "<group>"; };
 		4D89B4E92242B2D90015DC4D /* Point+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Point+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		4D89B4EC2242B3DF0015DC4D /* CoreDataStack..swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack..swift; sourceTree = "<group>"; };
+		4D89B4EE2242DFF40015DC4D /* FreeForexAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FreeForexAPI.swift; path = ForexGame/Models/CoreData/FreeForexAPI.swift; sourceTree = SOURCE_ROOT; };
 		4DBEE0DD221D68FF009A4EA4 /* ForexGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForexGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DBEE0E1221D68FF009A4EA4 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		4DBEE0E3221D68FF009A4EA4 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
@@ -279,6 +281,7 @@
 		4DBEE10E221D88D7009A4EA4 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				4D89B4EE2242DFF40015DC4D /* FreeForexAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -419,6 +422,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DBEE105221D68FF009A4EA4 /* AppDelegate.swift in Sources */,
+				4D89B4EF2242DFF40015DC4D /* FreeForexAPI.swift in Sources */,
 				4DBEE113221E00CF009A4EA4 /* MainViewController.swift in Sources */,
 				4D89B4EA2242B2D90015DC4D /* Point+CoreDataClass.swift in Sources */,
 				4DBEE115221E0852009A4EA4 /* RoundedView.swift in Sources */,
