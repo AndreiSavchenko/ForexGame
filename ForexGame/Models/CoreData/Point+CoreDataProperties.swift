@@ -10,7 +10,6 @@
 import Foundation
 import CoreData
 
-
 extension Point {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Point> {

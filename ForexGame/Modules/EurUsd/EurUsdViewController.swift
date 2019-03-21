@@ -8,23 +8,36 @@
 
 import UIKit
 import Charts
+import Moya
 
 class EurUsdViewController: UIViewController {
 
     @IBOutlet weak var eurUsdLineChartView: LineChartView!
 
+    let provider = MoyaProvider<FreeForexAPI>()
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        provider.request(.currentPoint(pair: "EURUSD")) { (result) in
+            switch result {
+            case .success(let response):
+                let json = try? response.mapJSON()
+                debugPrint(json as Any)
+            case .failure(let error):
+                debugPrint("ERROR = \(error)")
+            }
+        }
 
         let prices = [1.23000, 1.23010, 1.23020, 1.23050, 1.23040,
                       1.23030, 1.23020, 1.23050, 1.23080, 1.23130,
                       1.23120, 1.23090, 1.23060, 1.23100, 1.23140,
                       1.23190, 1.23220, 1.23200, 1.23190, 1.23200]
         setChart(prices: prices)
-        
+
 //        let a = Date(timeIntervalSince1970: 1552585731.857)
 //        print(a)
-        
+
 //        let decoder = JSONDecoder()
 //        decoder.dateDecodingStrategy = .millisecondsSince1970
 //        decoder.decode(Price.self, from: data)
