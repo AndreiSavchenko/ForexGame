@@ -22,10 +22,25 @@ class EurUsdViewController: UIViewController {
         provider.request(.currentPoint(pair: "EURUSD")) { (result) in
             switch result {
             case .success(let response):
-                let json = try? response.mapJSON()
-                debugPrint(json as Any)
+
+                do {
+//                    let filteredResponse = try response.filterSuccessfulStatusCodes()
+//                    let decoder = JSONDecoder()
+//                    decoder.dateDecodingStrategy = .secondsSince1970
+
+                    let res: ModelPoint = try response.map(ModelPoint.self)//, using: decoder)
+                    print(res)
+//                    let json = try filteredResponse.map(ModelPoint.self, using: decoder)
+//                    debugPrint(json as Any)
+                } catch let error {
+                    debugPrint("1 ERROR = \(error)")
+                }
+
+//                let json = try? response.map([ModelPoint].self)//mapJSON()
+//                debugPrint(json as Any)
+
             case .failure(let error):
-                debugPrint("ERROR = \(error)")
+                debugPrint("2 ERROR = \(error)")
             }
         }
 

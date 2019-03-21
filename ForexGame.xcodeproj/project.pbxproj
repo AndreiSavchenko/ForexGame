@@ -23,6 +23,8 @@
 		4DBEE113221E00CF009A4EA4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBEE112221E00CF009A4EA4 /* MainViewController.swift */; };
 		4DBEE115221E0852009A4EA4 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBEE114221E0852009A4EA4 /* RoundedView.swift */; };
 		4DBEE117221EDE42009A4EA4 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBEE116221EDE42009A4EA4 /* RoundedButton.swift */; };
+		4DF1ED622243C0BF00D9FC6D /* Decodable+Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1ED612243C0BF00D9FC6D /* Decodable+Dictionary.swift */; };
+		4DF1ED642243C5B700D9FC6D /* ModelPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1ED632243C5B700D9FC6D /* ModelPoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +60,8 @@
 		4DBEE112221E00CF009A4EA4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		4DBEE114221E0852009A4EA4 /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		4DBEE116221EDE42009A4EA4 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		4DF1ED612243C0BF00D9FC6D /* Decodable+Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decodable+Dictionary.swift"; sourceTree = "<group>"; };
+		4DF1ED632243C5B700D9FC6D /* ModelPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelPoint.swift; sourceTree = "<group>"; };
 		DAE83B1F8487C86807FCCF1C /* Pods-ForexGame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForexGame.release.xcconfig"; path = "Target Support Files/Pods-ForexGame/Pods-ForexGame.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -146,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				4DBEE0E5221D68FF009A4EA4 /* .gitkeep */,
+				4DF1ED632243C5B700D9FC6D /* ModelPoint.swift */,
 				4DBEE10D221D8847009A4EA4 /* CoreData */,
 			);
 			path = Models;
@@ -282,6 +287,7 @@
 			isa = PBXGroup;
 			children = (
 				4D89B4EE2242DFF40015DC4D /* FreeForexAPI.swift */,
+				4DF1ED612243C0BF00D9FC6D /* Decodable+Dictionary.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -423,9 +429,11 @@
 			files = (
 				4DBEE105221D68FF009A4EA4 /* AppDelegate.swift in Sources */,
 				4D89B4EF2242DFF40015DC4D /* FreeForexAPI.swift in Sources */,
+				4DF1ED642243C5B700D9FC6D /* ModelPoint.swift in Sources */,
 				4DBEE113221E00CF009A4EA4 /* MainViewController.swift in Sources */,
 				4D89B4EA2242B2D90015DC4D /* Point+CoreDataClass.swift in Sources */,
 				4DBEE115221E0852009A4EA4 /* RoundedView.swift in Sources */,
+				4DF1ED622243C0BF00D9FC6D /* Decodable+Dictionary.swift in Sources */,
 				4DBEE117221EDE42009A4EA4 /* RoundedButton.swift in Sources */,
 				4D69085E222B35130086A42D /* EurUsdViewController.swift in Sources */,
 				4D89B4EB2242B2D90015DC4D /* Point+CoreDataProperties.swift in Sources */,
