@@ -15,11 +15,15 @@ class CoreDataService {
     private init() { }
 //    var isUpdateChart = false
 
+    //????????????????? обновление контекста как в примере с табле вью 9 урок
     private lazy var context = CoreDataStack.shared.persistentContainer.viewContext
 
     private lazy var fetchedResultsController: NSFetchedResultsController<Point> = {
         let fetchRequest: NSFetchRequest<Point> = Point.fetchRequest()
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "pointTime", ascending: true)]
+
+//        ???????????
+
         let controller = NSFetchedResultsController<Point>(
             fetchRequest: fetchRequest,
             managedObjectContext: context,
@@ -42,6 +46,9 @@ class CoreDataService {
 
         }
 
+//        Проверка на нехватку истории
+//        pointsEurusdAll = [1.23440, 1.23443, 1.23444, 1.2345, 1.2346]
+
         print("pointsEurusdAll = \(pointsEurusdAll) \(pointsEurusdAll.count)")
 
         if pointsEurusdAll.count>20 {
@@ -49,11 +56,15 @@ class CoreDataService {
             print("countDelPoints = \(countDelPoints)")
             for _ in 0..<countDelPoints {
 //                print("i = \(i)")
-                pointsEurusdAll.removeFirst()
+                pointsEurusdAll.removeFirst() //?????????????????????? Правильно ли здесь удалять и из контекста
             }
-            pointsEurusd = pointsEurusdAll
+        } else {
+            let countAddPoints = 20 - pointsEurusdAll.count
+            for _ in 0..<countAddPoints {
+                pointsEurusdAll.insert(pointsEurusdAll[0], at: 0)
+            }
         }
-
+        pointsEurusd = pointsEurusdAll
         print("pointsEurusd = \(pointsEurusd) \(pointsEurusd.count)")
         return pointsEurusd
     }

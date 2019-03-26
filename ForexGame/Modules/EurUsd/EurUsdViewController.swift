@@ -22,7 +22,8 @@ class EurUsdViewController: UIViewController {
         super.viewDidLoad()
 
         ratesService.downloadPointsToCoreData()
-        prices = ratesService.createArrayPointsEurusd()
+        prices = coreDataService.createArrayPointsEurusd() // Спросить за флаги с других//Где нужно запускать эту функцию
+
 //        coreDataService.updateCartEurusd()
 //        if ratesService.isWorking == true {
 //            prices = coreDataService.createArrayPointsEurusd()
@@ -63,7 +64,7 @@ class EurUsdViewController: UIViewController {
         eurUsdLineChartView.setScaleEnabled(false)
         eurUsdLineChartView.animate(xAxisDuration: 1.5)
         eurUsdLineChartView.drawGridBackgroundEnabled = false
-        eurUsdLineChartView.xAxis.drawAxisLineEnabled = false
+        eurUsdLineChartView.xAxis.drawAxisLineEnabled = true
         eurUsdLineChartView.xAxis.drawGridLinesEnabled = false
         eurUsdLineChartView.leftAxis.drawAxisLineEnabled = false
         eurUsdLineChartView.leftAxis.drawGridLinesEnabled = false
