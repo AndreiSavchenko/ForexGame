@@ -2,7 +2,7 @@
 //  Point+CoreDataProperties.swift
 //  ForexGame
 //
-//  Created by Alla on 3/20/19.
+//  Created by Alla on 3/21/19.
 //  Copyright © 2019 AndreiSavchenko. All rights reserved.
 //
 //

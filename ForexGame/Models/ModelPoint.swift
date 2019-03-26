@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct ModelPoint: Codable {
+public struct ModelPoint: Decodable {
     public let rates: Rates
     public let code: Int
 
@@ -23,7 +23,7 @@ public struct ModelPoint: Codable {
     }
 }
 
-public struct Rates: Codable {
+public struct Rates: Decodable {
     public let eurusd: Eurusd
 
     enum CodingKeys: String, CodingKey {
@@ -35,16 +35,16 @@ public struct Rates: Codable {
     }
 }
 
-public struct Eurusd: Codable {
+public struct Eurusd: Decodable {
     public let rate: Double
-    public let timestamp: Int
+    public let timestamp: Date
 
 //    enum CodingKeys: String, CodingKey {
 //        case rate = "rate"
 //        case timestamp = "timestamp"
 //    }
 
-    public init(rate: Double, timestamp: Int) {
+    public init(rate: Double, timestamp: Date) {
         self.rate = rate
         self.timestamp = timestamp
     }

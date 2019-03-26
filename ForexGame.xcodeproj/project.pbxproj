@@ -9,10 +9,6 @@
 /* Begin PBXBuildFile section */
 		2D3867D3FBCBEDA16796565B /* libPods-ForexGame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 333EFAC6B054C70512DAC5FC /* libPods-ForexGame.a */; };
 		4D69085E222B35130086A42D /* EurUsdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D69085D222B35130086A42D /* EurUsdViewController.swift */; };
-		4D89B4E32242AFCC0015DC4D /* ModelPoint.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4D89B4E12242AFCC0015DC4D /* ModelPoint.xcdatamodeld */; };
-		4D89B4EA2242B2D90015DC4D /* Point+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D89B4E82242B2D90015DC4D /* Point+CoreDataClass.swift */; };
-		4D89B4EB2242B2D90015DC4D /* Point+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D89B4E92242B2D90015DC4D /* Point+CoreDataProperties.swift */; };
-		4D89B4ED2242B3DF0015DC4D /* CoreDataStack..swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D89B4EC2242B3DF0015DC4D /* CoreDataStack..swift */; };
 		4D89B4EF2242DFF40015DC4D /* FreeForexAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D89B4EE2242DFF40015DC4D /* FreeForexAPI.swift */; };
 		4DBEE0FA221D68FF009A4EA4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4DBEE0F9221D68FF009A4EA4 /* Localizable.strings */; };
 		4DBEE0FE221D68FF009A4EA4 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DBEE0FD221D68FF009A4EA4 /* Colors.xcassets */; };
@@ -25,16 +21,18 @@
 		4DBEE117221EDE42009A4EA4 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBEE116221EDE42009A4EA4 /* RoundedButton.swift */; };
 		4DF1ED622243C0BF00D9FC6D /* Decodable+Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1ED612243C0BF00D9FC6D /* Decodable+Dictionary.swift */; };
 		4DF1ED642243C5B700D9FC6D /* ModelPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1ED632243C5B700D9FC6D /* ModelPoint.swift */; };
+		4DF1ED672243F7E800D9FC6D /* RatesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1ED662243F7E800D9FC6D /* RatesService.swift */; };
+		4DF1ED6B2244380700D9FC6D /* ModelPoint.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1ED682244380700D9FC6D /* ModelPoint.xcdatamodeld */; };
+		4DF1ED6E2244388100D9FC6D /* Point+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1ED6C2244388100D9FC6D /* Point+CoreDataClass.swift */; };
+		4DF1ED6F2244388100D9FC6D /* Point+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1ED6D2244388100D9FC6D /* Point+CoreDataProperties.swift */; };
+		4DF1ED71224438DD00D9FC6D /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1ED70224438DD00D9FC6D /* CoreDataStack.swift */; };
+		4DF1ED7322443C3700D9FC6D /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1ED7222443C3700D9FC6D /* CoreDataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1E7561526940559531283BB0 /* Pods-ForexGame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForexGame.debug.xcconfig"; path = "Target Support Files/Pods-ForexGame/Pods-ForexGame.debug.xcconfig"; sourceTree = "<group>"; };
 		333EFAC6B054C70512DAC5FC /* libPods-ForexGame.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ForexGame.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D69085D222B35130086A42D /* EurUsdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EurUsdViewController.swift; sourceTree = "<group>"; };
-		4D89B4E22242AFCC0015DC4D /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		4D89B4E82242B2D90015DC4D /* Point+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Point+CoreDataClass.swift"; sourceTree = "<group>"; };
-		4D89B4E92242B2D90015DC4D /* Point+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Point+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		4D89B4EC2242B3DF0015DC4D /* CoreDataStack..swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack..swift; sourceTree = "<group>"; };
 		4D89B4EE2242DFF40015DC4D /* FreeForexAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FreeForexAPI.swift; path = ForexGame/Models/CoreData/FreeForexAPI.swift; sourceTree = SOURCE_ROOT; };
 		4DBEE0DD221D68FF009A4EA4 /* ForexGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForexGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DBEE0E1221D68FF009A4EA4 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
@@ -62,6 +60,13 @@
 		4DBEE116221EDE42009A4EA4 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		4DF1ED612243C0BF00D9FC6D /* Decodable+Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decodable+Dictionary.swift"; sourceTree = "<group>"; };
 		4DF1ED632243C5B700D9FC6D /* ModelPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelPoint.swift; sourceTree = "<group>"; };
+		4DF1ED662243F7E800D9FC6D /* RatesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesService.swift; sourceTree = "<group>"; };
+		4DF1ED692244380700D9FC6D /* ModelPoint.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ModelPoint.xcdatamodel; sourceTree = "<group>"; };
+		4DF1ED6A2244380700D9FC6D /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		4DF1ED6C2244388100D9FC6D /* Point+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Point+CoreDataClass.swift"; sourceTree = "<group>"; };
+		4DF1ED6D2244388100D9FC6D /* Point+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Point+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		4DF1ED70224438DD00D9FC6D /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		4DF1ED7222443C3700D9FC6D /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		DAE83B1F8487C86807FCCF1C /* Pods-ForexGame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForexGame.release.xcconfig"; path = "Target Support Files/Pods-ForexGame/Pods-ForexGame.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -141,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				4DBEE0E3221D68FF009A4EA4 /* .gitkeep */,
+				4DF1ED652243F7B800D9FC6D /* Service */,
 				4DBEE10E221D88D7009A4EA4 /* API */,
 			);
 			path = "Business Logic";
@@ -275,10 +281,10 @@
 		4DBEE10D221D8847009A4EA4 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				4D89B4E12242AFCC0015DC4D /* ModelPoint.xcdatamodeld */,
-				4D89B4EC2242B3DF0015DC4D /* CoreDataStack..swift */,
-				4D89B4E82242B2D90015DC4D /* Point+CoreDataClass.swift */,
-				4D89B4E92242B2D90015DC4D /* Point+CoreDataProperties.swift */,
+				4DF1ED682244380700D9FC6D /* ModelPoint.xcdatamodeld */,
+				4DF1ED70224438DD00D9FC6D /* CoreDataStack.swift */,
+				4DF1ED6C2244388100D9FC6D /* Point+CoreDataClass.swift */,
+				4DF1ED6D2244388100D9FC6D /* Point+CoreDataProperties.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -299,6 +305,15 @@
 				4DBEE112221E00CF009A4EA4 /* MainViewController.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		4DF1ED652243F7B800D9FC6D /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				4DF1ED662243F7E800D9FC6D /* RatesService.swift */,
+				4DF1ED7222443C3700D9FC6D /* CoreDataService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		6DFDDC91B635984F7CB35C1E /* Pods */ = {
@@ -427,18 +442,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DF1ED7322443C3700D9FC6D /* CoreDataService.swift in Sources */,
 				4DBEE105221D68FF009A4EA4 /* AppDelegate.swift in Sources */,
 				4D89B4EF2242DFF40015DC4D /* FreeForexAPI.swift in Sources */,
+				4DF1ED6B2244380700D9FC6D /* ModelPoint.xcdatamodeld in Sources */,
 				4DF1ED642243C5B700D9FC6D /* ModelPoint.swift in Sources */,
 				4DBEE113221E00CF009A4EA4 /* MainViewController.swift in Sources */,
-				4D89B4EA2242B2D90015DC4D /* Point+CoreDataClass.swift in Sources */,
 				4DBEE115221E0852009A4EA4 /* RoundedView.swift in Sources */,
+				4DF1ED71224438DD00D9FC6D /* CoreDataStack.swift in Sources */,
+				4DF1ED672243F7E800D9FC6D /* RatesService.swift in Sources */,
+				4DF1ED6E2244388100D9FC6D /* Point+CoreDataClass.swift in Sources */,
 				4DF1ED622243C0BF00D9FC6D /* Decodable+Dictionary.swift in Sources */,
 				4DBEE117221EDE42009A4EA4 /* RoundedButton.swift in Sources */,
+				4DF1ED6F2244388100D9FC6D /* Point+CoreDataProperties.swift in Sources */,
 				4D69085E222B35130086A42D /* EurUsdViewController.swift in Sources */,
-				4D89B4EB2242B2D90015DC4D /* Point+CoreDataProperties.swift in Sources */,
-				4D89B4ED2242B3DF0015DC4D /* CoreDataStack..swift in Sources */,
-				4D89B4E32242AFCC0015DC4D /* ModelPoint.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -621,12 +638,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		4D89B4E12242AFCC0015DC4D /* ModelPoint.xcdatamodeld */ = {
+		4DF1ED682244380700D9FC6D /* ModelPoint.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				4D89B4E22242AFCC0015DC4D /* Model.xcdatamodel */,
+				4DF1ED692244380700D9FC6D /* ModelPoint.xcdatamodel */,
+				4DF1ED6A2244380700D9FC6D /* Model.xcdatamodel */,
 			);
-			currentVersion = 4D89B4E22242AFCC0015DC4D /* Model.xcdatamodel */;
+			currentVersion = 4DF1ED692244380700D9FC6D /* ModelPoint.xcdatamodel */;
 			path = ModelPoint.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

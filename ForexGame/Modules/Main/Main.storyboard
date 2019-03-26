@@ -170,15 +170,15 @@
                                 <rect key="frame" x="10" y="140" width="355" height="308"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NVw-8f-9Ub" customClass="LineChartView" customModule="Charts">
-                                        <rect key="frame" x="0.0" y="7" width="355" height="294"/>
+                                        <rect key="frame" x="0.0" y="10" width="355" height="288"/>
                                         <color key="backgroundColor" name="1ColorAquaDark"/>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" name="1ColorAquaDark"/>
                                 <constraints>
                                     <constraint firstItem="NVw-8f-9Ub" firstAttribute="leading" secondItem="Dj9-Z1-SdD" secondAttribute="leading" id="W21-tK-fc3"/>
-                                    <constraint firstAttribute="bottom" secondItem="NVw-8f-9Ub" secondAttribute="bottom" constant="7" id="XPG-26-1ju"/>
-                                    <constraint firstItem="NVw-8f-9Ub" firstAttribute="top" secondItem="Dj9-Z1-SdD" secondAttribute="top" constant="7" id="p3N-Z3-MDn"/>
+                                    <constraint firstAttribute="bottom" secondItem="NVw-8f-9Ub" secondAttribute="bottom" constant="10" id="XPG-26-1ju"/>
+                                    <constraint firstItem="NVw-8f-9Ub" firstAttribute="top" secondItem="Dj9-Z1-SdD" secondAttribute="top" constant="10" id="p3N-Z3-MDn"/>
                                     <constraint firstAttribute="trailing" secondItem="NVw-8f-9Ub" secondAttribute="trailing" id="zOH-GB-z4K"/>
                                 </constraints>
                             </view>

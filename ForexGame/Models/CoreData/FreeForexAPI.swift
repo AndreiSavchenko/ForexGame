@@ -18,13 +18,13 @@ enum FreeForexAPI {
 extension FreeForexAPI: TargetType {
 
     var baseURL: URL {
-        return URL(string: "https://www.freeforexapi.com/api/live?pairs=")!
+        return URL(string: "https://www.freeforexapi.com/")!
     }
 
     var path: String {
         switch self {
-        case .currentPoint(let pair):
-            return "\(pair)"
+        case .currentPoint:
+            return "api/live"
         }
     }
     var method: Moya.Method {
@@ -35,8 +35,8 @@ extension FreeForexAPI: TargetType {
     }
     var task: Task {
         switch self {
-        case .currentPoint: // Send no parameters
-            return .requestPlain
+        case let .currentPoint(pair):
+            return .requestParameters(parameters: ["pairs": pair], encoding: URLEncoding.queryString)
         }
     }
     var sampleData: Data {

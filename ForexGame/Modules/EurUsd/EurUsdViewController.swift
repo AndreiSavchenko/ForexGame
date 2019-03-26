@@ -14,48 +14,26 @@ class EurUsdViewController: UIViewController {
 
     @IBOutlet weak var eurUsdLineChartView: LineChartView!
 
-    let provider = MoyaProvider<FreeForexAPI>()
+    let ratesService = RatesService.shared
+    let coreDataService = CoreDataService.shared
+    var prices: [Double] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        provider.request(.currentPoint(pair: "EURUSD")) { (result) in
-            switch result {
-            case .success(let response):
+        ratesService.downloadPointsToCoreData()
+        prices = ratesService.createArrayPointsEurusd()
+//        coreDataService.updateCartEurusd()
+//        if ratesService.isWorking == true {
+//            prices = coreDataService.createArrayPointsEurusd()
+////            ratesService.isUpdateChart = false
+//        }
 
-                do {
-//                    let filteredResponse = try response.filterSuccessfulStatusCodes()
-//                    let decoder = JSONDecoder()
-//                    decoder.dateDecodingStrategy = .secondsSince1970
-
-                    let res: ModelPoint = try response.map(ModelPoint.self)//, using: decoder)
-                    print(res)
-//                    let json = try filteredResponse.map(ModelPoint.self, using: decoder)
-//                    debugPrint(json as Any)
-                } catch let error {
-                    debugPrint("1 ERROR = \(error)")
-                }
-
-//                let json = try? response.map([ModelPoint].self)//mapJSON()
-//                debugPrint(json as Any)
-
-            case .failure(let error):
-                debugPrint("2 ERROR = \(error)")
-            }
-        }
-
-        let prices = [1.23000, 1.23010, 1.23020, 1.23050, 1.23040,
-                      1.23030, 1.23020, 1.23050, 1.23080, 1.23130,
-                      1.23120, 1.23090, 1.23060, 1.23100, 1.23140,
-                      1.23190, 1.23220, 1.23200, 1.23190, 1.23200]
+//        let prices = [1.23000, 1.23010, 1.23020, 1.23050, 1.23040,
+//                      1.23030, 1.23020, 1.23050, 1.23080, 1.23130,
+//                      1.23120, 1.23090, 1.23060, 1.23100, 1.23140,
+//                      1.23190, 1.23220, 1.23200, 1.23190, 1.23200]
         setChart(prices: prices)
-
-//        let a = Date(timeIntervalSince1970: 1552585731.857)
-//        print(a)
-
-//        let decoder = JSONDecoder()
-//        decoder.dateDecodingStrategy = .millisecondsSince1970
-//        decoder.decode(Price.self, from: data)
 
     }
 
