@@ -18,7 +18,9 @@ class RatesService {
     let provider = MoyaProvider<FreeForexAPI>()                             //(plugins: [NetworkLoggerPlugin()])
     let context = CoreDataStack.shared.persistentContainer.viewContext
     var isWorking = false
-//    var isUpdateChart = true
+    var isUpdateChart = true
+
+    var onPricesUpdated: (() -> Void)?
 
     func savePointFromAPI() {
         provider.request(.currentPoint(pair: "EURUSD")) { (result) in
@@ -33,8 +35,11 @@ class RatesService {
 
                     let point = Point(context: self.context)
                     point.pointPrice = currPoint.rates.eurusd.rate
+                    print("NEW PRICE = \(point.pointPrice)")
                     point.pointTime = currPoint.rates.eurusd.timestamp as NSDate
+                    print("NEW TIME = \(String(describing: point.pointTime))")
                     try? self.context.save()
+                    self.onPricesUpdated?()
                 } catch let error {
                     debugPrint("success ERROR = \(error)")
                 }
@@ -57,6 +62,5 @@ class RatesService {
         let currentDateTime = Date()
         print("Timer fired!\(currentDateTime)")
         savePointFromAPI()
-        //    var isUpdateChart = true ????????????????
     }
 }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2D3867D3FBCBEDA16796565B /* libPods-ForexGame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 333EFAC6B054C70512DAC5FC /* libPods-ForexGame.a */; };
+		4D00D2B7224D1E170075D88B /* Deals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D00D2B6224D1E170075D88B /* Deals.swift */; };
 		4D69085E222B35130086A42D /* EurUsdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D69085D222B35130086A42D /* EurUsdViewController.swift */; };
 		4D89B4EF2242DFF40015DC4D /* FreeForexAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D89B4EE2242DFF40015DC4D /* FreeForexAPI.swift */; };
 		4DBEE0FA221D68FF009A4EA4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4DBEE0F9221D68FF009A4EA4 /* Localizable.strings */; };
@@ -32,6 +33,7 @@
 /* Begin PBXFileReference section */
 		1E7561526940559531283BB0 /* Pods-ForexGame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForexGame.debug.xcconfig"; path = "Target Support Files/Pods-ForexGame/Pods-ForexGame.debug.xcconfig"; sourceTree = "<group>"; };
 		333EFAC6B054C70512DAC5FC /* libPods-ForexGame.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ForexGame.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D00D2B6224D1E170075D88B /* Deals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deals.swift; sourceTree = "<group>"; };
 		4D69085D222B35130086A42D /* EurUsdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EurUsdViewController.swift; sourceTree = "<group>"; };
 		4D89B4EE2242DFF40015DC4D /* FreeForexAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FreeForexAPI.swift; path = ForexGame/Models/CoreData/FreeForexAPI.swift; sourceTree = SOURCE_ROOT; };
 		4DBEE0DD221D68FF009A4EA4 /* ForexGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForexGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -312,6 +314,7 @@
 			children = (
 				4DF1ED662243F7E800D9FC6D /* RatesService.swift */,
 				4DF1ED7222443C3700D9FC6D /* CoreDataService.swift */,
+				4D00D2B6224D1E170075D88B /* Deals.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -443,6 +446,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DF1ED7322443C3700D9FC6D /* CoreDataService.swift in Sources */,
+				4D00D2B7224D1E170075D88B /* Deals.swift in Sources */,
 				4DBEE105221D68FF009A4EA4 /* AppDelegate.swift in Sources */,
 				4D89B4EF2242DFF40015DC4D /* FreeForexAPI.swift in Sources */,
 				4DF1ED6B2244380700D9FC6D /* ModelPoint.xcdatamodeld in Sources */,

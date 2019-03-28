@@ -20,31 +20,29 @@ class EurUsdViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        ratesService.onPricesUpdated = { [weak self] in
+            guard let self = self else { return }
+            self.prices = self.coreDataService.createArrayPointsEurusd()
+            self.setChart(prices: self.prices, hasAnimate: false)
+        }
 
         ratesService.downloadPointsToCoreData()
-        prices = coreDataService.createArrayPointsEurusd() // Спросить за флаги с других//Где нужно запускать эту функцию
-
-//        coreDataService.updateCartEurusd()
-//        if ratesService.isWorking == true {
-//            prices = coreDataService.createArrayPointsEurusd()
-////            ratesService.isUpdateChart = false
-//        }
-
-//        let prices = [1.23000, 1.23010, 1.23020, 1.23050, 1.23040,
-//                      1.23030, 1.23020, 1.23050, 1.23080, 1.23130,
-//                      1.23120, 1.23090, 1.23060, 1.23100, 1.23140,
-//                      1.23190, 1.23220, 1.23200, 1.23190, 1.23200]
-        setChart(prices: prices)
-
+        prices = coreDataService.createArrayPointsEurusd()
+        setChart(prices: prices, hasAnimate: true)
     }
 
-    func setChart(prices: [Double]) {
-
+    func setChart(prices: [Double], hasAnimate: Bool) {
         var dataEntries: [ChartDataEntry] = []
+        var dataEntriesCurr: [ChartDataEntry] = []
+        var priceCurr = [Double] (repeating: prices.last!, count: prices.count)
 
         for i in 0..<prices.count {
             let dataEntry = ChartDataEntry(x: Double(i), y: prices[i])
             dataEntries.append(dataEntry)
+        }
+        for i in 0..<priceCurr.count {
+            let dataEntryCurr = ChartDataEntry(x: Double(i), y: priceCurr[i])
+            dataEntriesCurr.append(dataEntryCurr)
         }
 
         let lineChartDataSet = LineChartDataSet(values: dataEntries, label: "EUR/USD")
@@ -54,28 +52,36 @@ class EurUsdViewController: UIViewController {
         lineChartDataSet.lineWidth = 2.5
         lineChartDataSet.cubicIntensity = 0.2
         lineChartDataSet.drawValuesEnabled = false
-
         let gradient = getGradientFilling()
         lineChartDataSet.fill = Fill.fillWithLinearGradient(gradient, angle: 90.0)
         lineChartDataSet.drawFilledEnabled = true
 
-        let lineChartData = LineChartData(dataSet: lineChartDataSet)
+        let lineChartDataSetCurr = LineChartDataSet(values: dataEntriesCurr, label: "EUR/USD Curr")
+        lineChartDataSetCurr.mode = .cubicBezier
+        lineChartDataSetCurr.drawCirclesEnabled = false         // без кругов
+        lineChartDataSetCurr.colors = [NSUIColor.white]
+        lineChartDataSetCurr.lineWidth = 1.0
+        lineChartDataSetCurr.drawValuesEnabled = false
+
+        let lineChartData = LineChartData(dataSets: [lineChartDataSet, lineChartDataSetCurr])
         eurUsdLineChartView.data = lineChartData
         eurUsdLineChartView.setScaleEnabled(false)
-        eurUsdLineChartView.animate(xAxisDuration: 1.5)
         eurUsdLineChartView.drawGridBackgroundEnabled = false
         eurUsdLineChartView.xAxis.drawAxisLineEnabled = true
-        eurUsdLineChartView.xAxis.drawGridLinesEnabled = false
+        eurUsdLineChartView.xAxis.drawGridLinesEnabled = true
+        eurUsdLineChartView.xAxis.enabled = true
+        eurUsdLineChartView.xAxis.drawLabelsEnabled = false
         eurUsdLineChartView.leftAxis.drawAxisLineEnabled = false
         eurUsdLineChartView.leftAxis.drawGridLinesEnabled = false
-        eurUsdLineChartView.rightAxis.drawAxisLineEnabled = false
-        eurUsdLineChartView.rightAxis.drawGridLinesEnabled = false
-        eurUsdLineChartView.legend.enabled = false
-        eurUsdLineChartView.xAxis.enabled = false
         eurUsdLineChartView.leftAxis.enabled = false
-        eurUsdLineChartView.xAxis.drawLabelsEnabled = false
-    }
+        eurUsdLineChartView.rightAxis.drawAxisLineEnabled = true
+        eurUsdLineChartView.rightAxis.drawGridLinesEnabled = true
+        eurUsdLineChartView.legend.enabled = false
 
+        if hasAnimate {
+            eurUsdLineChartView.animate(xAxisDuration: 1.5)
+        }
+    }
 }
 
 private func getGradientFilling() -> CGGradient {
