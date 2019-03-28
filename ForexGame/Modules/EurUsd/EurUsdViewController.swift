@@ -32,6 +32,7 @@ class EurUsdViewController: UIViewController {
     }
 
     func setChart(prices: [Double], hasAnimate: Bool) {
+        guard !prices.isEmpty else { return }
         var dataEntries: [ChartDataEntry] = []
         var dataEntriesCurr: [ChartDataEntry] = []
         var priceCurr = [Double] (repeating: prices.last!, count: prices.count)

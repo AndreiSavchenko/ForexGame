@@ -44,10 +44,16 @@ class CoreDataService {
 
         let deleteFetchRequest: NSFetchRequest<Point> = Point.fetchRequest()
         deleteFetchRequest.sortDescriptors = [NSSortDescriptor(key: "pointTime", ascending: true)]
-//        deleteFetchRequest.predicate = NSPredicate(format: "pointTime NOT IN $@", currentPointTimes)
-        deleteFetchRequest.predicate = NSPredicate(format: "NOT pointTime IN {%@}", currentPointTimes)
-        let deleteRequest = NSBatchDeleteRequest(fetchRequest: (deleteFetchRequest as!NSFetchRequest<NSFetchRequestResult>))
-        print("deleteRequest = \(deleteRequest)")
+        deleteFetchRequest.predicate = NSPredicate(format: "NOT pointTime IN %@", currentPointTimes)
+        let deleteBatchRequest = NSBatchDeleteRequest(fetchRequest:
+            (deleteFetchRequest as! NSFetchRequest<NSFetchRequestResult>))
+
+        do {
+            print("111")
+            try context.execute(deleteBatchRequest)
+        } catch {
+            print("Error")
+        }
 
 //        (NSArray *)result = [context, deleteFetchRequest:fetchRequest error:nil]
 
@@ -57,13 +63,14 @@ class CoreDataService {
     }
 
     func createArrayPointsEurusd() -> [Double] {
-//        clearPrevious()
+        clearPrevious()
 
         var pointsEurusdAll: [Double] = []
         var pointsEurusd: [Double] = []
 
         try? fetchedResultsController.performFetch()
-        guard let count = fetchedResultsController.fetchedObjects?.count else { return [] }
+        guard let count = fetchedResultsController.fetchedObjects?.count, count > 0 else { return [] }
+
         for i in 0..<count {
             pointsEurusdAll.append((fetchedResultsController.fetchedObjects?[i].pointPrice)!)
         }

@@ -8,6 +8,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -186,35 +187,77 @@
                                 <rect key="frame" x="10" y="458" width="355" height="150"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="n1e-K2-i03">
-                                        <rect key="frame" x="10" y="10" width="335" height="50"/>
+                                        <rect key="frame" x="10" y="10" width="335" height="130"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j1Y-97-o2j" customClass="RoundedButton" customModule="ForexGame" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="162.5" height="50"/>
-                                                <color key="backgroundColor" name="1ColorGreen"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                                <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
-                                                <state key="normal" title="BUY" image="buy30"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OZf-5a-NOH" customClass="RoundedButton" customModule="ForexGame" customModuleProvider="target">
-                                                <rect key="frame" x="172.5" y="0.0" width="162.5" height="50"/>
-                                                <color key="backgroundColor" name="AdditionalColor"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
-                                                <state key="normal" title="SELL" image="sell30"/>
-                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="z8C-nl-WTy">
+                                                <rect key="frame" x="0.0" y="0.0" width="162.5" height="130"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j1Y-97-o2j" customClass="RoundedButton" customModule="ForexGame" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="162.5" height="60"/>
+                                                        <color key="backgroundColor" name="1ColorGreen"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                                        <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                                                        <state key="normal" title="BUY" image="buy30"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OZf-5a-NOH" customClass="RoundedButton" customModule="ForexGame" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="70" width="162.5" height="60"/>
+                                                        <color key="backgroundColor" name="AdditionalColor"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                                                        <state key="normal" title="SELL" image="sell30"/>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="j1Y-97-o2j" firstAttribute="height" secondItem="OZf-5a-NOH" secondAttribute="height" id="pEv-bS-8mB"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Aux-au-43P">
+                                                <rect key="frame" x="172.5" y="0.0" width="162.5" height="130"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="cca-U9-341">
+                                                        <rect key="frame" x="0.0" y="0.0" width="162.5" height="70"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Current Price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wj1-7M-xvH">
+                                                                <rect key="frame" x="0.0" y="0.0" width="162.5" height="31"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                                <color key="textColor" name="ColorTextWhite"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.29000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nKv-2J-GM7">
+                                                                <rect key="frame" x="0.0" y="39" width="162.5" height="31"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <color key="textColor" name="ColorTextWhite"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="wj1-7M-xvH" firstAttribute="height" secondItem="nKv-2J-GM7" secondAttribute="height" id="JLd-jx-zpP"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g0N-Fu-Mdw" customClass="RoundedButton" customModule="ForexGame" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="70" width="162.5" height="60"/>
+                                                        <color key="backgroundColor" name="1ColorAqua"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                                                        <state key="normal" title="HISTORY"/>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="OZf-5a-NOH" firstAttribute="width" secondItem="j1Y-97-o2j" secondAttribute="width" id="6m9-Xl-Ubz"/>
-                                            <constraint firstAttribute="height" constant="50" id="anW-cb-fu1"/>
+                                            <constraint firstItem="OZf-5a-NOH" firstAttribute="width" secondItem="g0N-Fu-Mdw" secondAttribute="width" id="ZHN-bm-tOV"/>
+                                            <constraint firstItem="OZf-5a-NOH" firstAttribute="height" secondItem="g0N-Fu-Mdw" secondAttribute="height" id="daA-JR-HFh"/>
+                                            <constraint firstItem="Aux-au-43P" firstAttribute="width" secondItem="j1Y-97-o2j" secondAttribute="width" id="ihK-OH-icU"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" name="1ColorAquaDark"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="n1e-K2-i03" secondAttribute="trailing" constant="10" id="6kN-gA-l8b"/>
+                                    <constraint firstAttribute="bottom" secondItem="n1e-K2-i03" secondAttribute="bottom" constant="10" id="Y54-QZ-4VB"/>
                                     <constraint firstItem="n1e-K2-i03" firstAttribute="top" secondItem="vAb-Hc-clK" secondAttribute="top" constant="10" id="c19-Gg-B82"/>
                                     <constraint firstItem="n1e-K2-i03" firstAttribute="leading" secondItem="vAb-Hc-clK" secondAttribute="leading" constant="10" id="l8n-ff-r5X"/>
-                                    <constraint firstAttribute="trailing" secondItem="n1e-K2-i03" secondAttribute="trailing" constant="10" id="saJ-Rx-8bA"/>
                                     <constraint firstAttribute="height" constant="150" id="x2E-LZ-ePf"/>
                                 </constraints>
                             </view>
@@ -241,7 +284,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G6P-rd-CTD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="362" y="-809"/>
+            <point key="canvasLocation" x="360.80000000000001" y="-809.14542728635683"/>
         </scene>
         <!--Mai-->
         <scene sceneID="tDN-4S-aDz">
