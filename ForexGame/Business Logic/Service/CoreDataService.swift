@@ -34,32 +34,22 @@ class CoreDataService {
     func clearPrevious() {
 
         try? fetchedResultsController.performFetch() // Fetch new 20
-
         let current = fetchedResultsController.fetchedObjects ?? [] // 20
-        guard current.count == 20 else {
-            return
-        }
-
+        guard current.count == 20 else { return }
         let currentPointTimes: [NSDate] = current.compactMap { $0.pointTime }
 
         let deleteFetchRequest: NSFetchRequest<Point> = Point.fetchRequest()
         deleteFetchRequest.sortDescriptors = [NSSortDescriptor(key: "pointTime", ascending: true)]
         deleteFetchRequest.predicate = NSPredicate(format: "NOT pointTime IN %@", currentPointTimes)
+
         let deleteBatchRequest = NSBatchDeleteRequest(fetchRequest:
             (deleteFetchRequest as! NSFetchRequest<NSFetchRequestResult>))
 
         do {
-            print("111")
             try context.execute(deleteBatchRequest)
         } catch {
             print("Error")
         }
-
-//        (NSArray *)result = [context, deleteFetchRequest:fetchRequest error:nil]
-
-//        deleteRequest.executeFetchRequest
-//
-//        context.delete()
     }
 
     func createArrayPointsEurusd() -> [Double] {

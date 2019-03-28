@@ -20,7 +20,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ghV-us-9Rj" customClass="RoundedView" customModule="ForexGame" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ghV-us-9Rj" userLabel="Balance View" customClass="RoundedView" customModule="ForexGame" customModuleProvider="target">
                                 <rect key="frame" x="10" y="30" width="355" height="100"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconHuman" translatesAutoresizingMaskIntoConstraints="NO" id="QIF-2L-wx5">
@@ -167,11 +167,11 @@
                                     <constraint firstAttribute="bottom" secondItem="St9-1L-cWx" secondAttribute="bottom" constant="10" id="jeA-E5-IFY"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dj9-Z1-SdD" customClass="RoundedView" customModule="ForexGame" customModuleProvider="target">
-                                <rect key="frame" x="10" y="140" width="355" height="308"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dj9-Z1-SdD" userLabel="Chart View" customClass="RoundedView" customModule="ForexGame" customModuleProvider="target">
+                                <rect key="frame" x="10" y="140" width="355" height="344"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NVw-8f-9Ub" customClass="LineChartView" customModule="Charts">
-                                        <rect key="frame" x="0.0" y="10" width="355" height="288"/>
+                                        <rect key="frame" x="0.0" y="10" width="355" height="324"/>
                                         <color key="backgroundColor" name="1ColorAquaDark"/>
                                     </view>
                                 </subviews>
@@ -183,64 +183,71 @@
                                     <constraint firstAttribute="trailing" secondItem="NVw-8f-9Ub" secondAttribute="trailing" id="zOH-GB-z4K"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vAb-Hc-clK" customClass="RoundedView" customModule="ForexGame" customModuleProvider="target">
-                                <rect key="frame" x="10" y="458" width="355" height="150"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vAb-Hc-clK" userLabel="Button View" customClass="RoundedView" customModule="ForexGame" customModuleProvider="target">
+                                <rect key="frame" x="10" y="494" width="355" height="114"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="n1e-K2-i03">
-                                        <rect key="frame" x="10" y="10" width="335" height="130"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="n1e-K2-i03" userLabel="Buy Sell Stack View">
+                                        <rect key="frame" x="10" y="10" width="335" height="94"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="z8C-nl-WTy">
-                                                <rect key="frame" x="0.0" y="0.0" width="162.5" height="130"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="162.5" height="94"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j1Y-97-o2j" customClass="RoundedButton" customModule="ForexGame" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="162.5" height="60"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="162.5" height="42"/>
                                                         <color key="backgroundColor" name="1ColorGreen"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                                         <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
                                                         <state key="normal" title="BUY" image="buy30"/>
+                                                        <connections>
+                                                            <action selector="buyButton:" destination="Q2B-DB-QBc" eventType="touchUpInside" id="V2P-Xa-uXh"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OZf-5a-NOH" customClass="RoundedButton" customModule="ForexGame" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="70" width="162.5" height="60"/>
+                                                        <rect key="frame" x="0.0" y="52" width="162.5" height="42"/>
                                                         <color key="backgroundColor" name="AdditionalColor"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
                                                         <state key="normal" title="SELL" image="sell30"/>
+                                                        <connections>
+                                                            <action selector="sellButton:" destination="Q2B-DB-QBc" eventType="touchUpInside" id="ev4-0E-RnV"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstItem="j1Y-97-o2j" firstAttribute="height" secondItem="OZf-5a-NOH" secondAttribute="height" id="pEv-bS-8mB"/>
                                                 </constraints>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Aux-au-43P">
-                                                <rect key="frame" x="172.5" y="0.0" width="162.5" height="130"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Aux-au-43P">
+                                                <rect key="frame" x="172.5" y="0.0" width="162.5" height="94"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="cca-U9-341">
-                                                        <rect key="frame" x="0.0" y="0.0" width="162.5" height="70"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="cca-U9-341">
+                                                        <rect key="frame" x="0.0" y="0.0" width="162.5" height="42"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Current Price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wj1-7M-xvH">
-                                                                <rect key="frame" x="0.0" y="0.0" width="162.5" height="31"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="162.5" height="20.5"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                                 <color key="textColor" name="ColorTextWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.29000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nKv-2J-GM7">
-                                                                <rect key="frame" x="0.0" y="39" width="162.5" height="31"/>
+                                                                <rect key="frame" x="0.0" y="21.5" width="162.5" height="20.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <color key="textColor" name="ColorTextWhite"/>
                                                                 <nil key="highlightedColor"/>
+                                                                <size key="shadowOffset" width="0.0" height="0.0"/>
                                                             </label>
                                                         </subviews>
-                                                        <constraints>
-                                                            <constraint firstItem="wj1-7M-xvH" firstAttribute="height" secondItem="nKv-2J-GM7" secondAttribute="height" id="JLd-jx-zpP"/>
-                                                        </constraints>
                                                     </stackView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g0N-Fu-Mdw" customClass="RoundedButton" customModule="ForexGame" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="70" width="162.5" height="60"/>
+                                                        <rect key="frame" x="0.0" y="52" width="162.5" height="42"/>
                                                         <color key="backgroundColor" name="1ColorAqua"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
                                                         <state key="normal" title="HISTORY"/>
+                                                        <connections>
+                                                            <action selector="historyButton:" destination="Q2B-DB-QBc" eventType="touchUpInside" id="aMM-D6-xf5"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -251,14 +258,79 @@
                                             <constraint firstItem="Aux-au-43P" firstAttribute="width" secondItem="j1Y-97-o2j" secondAttribute="width" id="ihK-OH-icU"/>
                                         </constraints>
                                     </stackView>
+                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="sb8-ZZ-i0v" userLabel="Close Stack View">
+                                        <rect key="frame" x="10" y="10" width="335" height="94"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="DMy-ej-Sfo">
+                                                <rect key="frame" x="0.0" y="0.0" width="162.5" height="94"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="9GG-Dy-4Ne">
+                                                        <rect key="frame" x="0.0" y="0.0" width="162.5" height="94"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Current Profit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wor-H8-pIZ">
+                                                                <rect key="frame" x="0.0" y="0.0" width="162.5" height="43"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                                <color key="textColor" name="ColorTextWhite"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="+ 130 $" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pGJ-FX-BxG">
+                                                                <rect key="frame" x="0.0" y="51" width="162.5" height="43"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                                <color key="textColor" name="ColorTextWhite"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="Wor-H8-pIZ" firstAttribute="height" secondItem="pGJ-FX-BxG" secondAttribute="height" id="j1G-fo-IPJ"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="WnM-F9-6mn">
+                                                <rect key="frame" x="172.5" y="0.0" width="162.5" height="94"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XL1-zK-eRu" customClass="RoundedButton" customModule="ForexGame" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="162.5" height="42"/>
+                                                        <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                                        <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                                                        <state key="normal" title="CLOSE"/>
+                                                        <connections>
+                                                            <action selector="closeButton:" destination="Q2B-DB-QBc" eventType="touchUpInside" id="hJW-XV-CLP"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TZ5-g1-YHq" customClass="RoundedButton" customModule="ForexGame" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="52" width="162.5" height="42"/>
+                                                        <color key="backgroundColor" name="1ColorAqua"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                                                        <state key="normal" title="HISTORY"/>
+                                                        <connections>
+                                                            <action selector="historyButton:" destination="Q2B-DB-QBc" eventType="touchUpInside" id="iMU-FZ-gaD"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="XL1-zK-eRu" firstAttribute="height" secondItem="TZ5-g1-YHq" secondAttribute="height" id="Y16-gF-eiT"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="WnM-F9-6mn" firstAttribute="width" secondItem="DMy-ej-Sfo" secondAttribute="width" id="lR4-Ex-JcX"/>
+                                        </constraints>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" name="1ColorAquaDark"/>
                                 <constraints>
+                                    <constraint firstItem="sb8-ZZ-i0v" firstAttribute="top" secondItem="vAb-Hc-clK" secondAttribute="top" constant="10" id="2eT-5u-BeD"/>
                                     <constraint firstAttribute="trailing" secondItem="n1e-K2-i03" secondAttribute="trailing" constant="10" id="6kN-gA-l8b"/>
+                                    <constraint firstItem="sb8-ZZ-i0v" firstAttribute="leading" secondItem="vAb-Hc-clK" secondAttribute="leading" constant="10" id="NvM-jF-7bi"/>
                                     <constraint firstAttribute="bottom" secondItem="n1e-K2-i03" secondAttribute="bottom" constant="10" id="Y54-QZ-4VB"/>
                                     <constraint firstItem="n1e-K2-i03" firstAttribute="top" secondItem="vAb-Hc-clK" secondAttribute="top" constant="10" id="c19-Gg-B82"/>
+                                    <constraint firstAttribute="trailing" secondItem="sb8-ZZ-i0v" secondAttribute="trailing" constant="10" id="fRp-WD-70L"/>
                                     <constraint firstItem="n1e-K2-i03" firstAttribute="leading" secondItem="vAb-Hc-clK" secondAttribute="leading" constant="10" id="l8n-ff-r5X"/>
-                                    <constraint firstAttribute="height" constant="150" id="x2E-LZ-ePf"/>
+                                    <constraint firstAttribute="bottom" secondItem="sb8-ZZ-i0v" secondAttribute="bottom" constant="10" id="pRN-zD-VDB"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -279,6 +351,10 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="EURUSD" id="uUD-Fw-GIs"/>
                     <connections>
+                        <outlet property="buySellStackView" destination="n1e-K2-i03" id="nQP-1N-Y4u"/>
+                        <outlet property="closeStackView" destination="sb8-ZZ-i0v" id="mta-s6-vhd"/>
+                        <outlet property="currentPriceLabel" destination="nKv-2J-GM7" id="uZk-OG-De2"/>
+                        <outlet property="currentProfitLabel" destination="pGJ-FX-BxG" id="zfw-Iy-ozj"/>
                         <outlet property="eurUsdLineChartView" destination="NVw-8f-9Ub" id="vZ8-Dx-xdL"/>
                     </connections>
                 </viewController>

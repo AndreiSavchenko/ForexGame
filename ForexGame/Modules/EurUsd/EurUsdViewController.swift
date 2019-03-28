@@ -12,6 +12,27 @@ import Moya
 
 class EurUsdViewController: UIViewController {
 
+    @IBOutlet weak var buySellStackView: UIStackView!
+    @IBAction func buyButton(_ sender: UIButton) {
+        buySellStackView.isHidden = true
+        closeStackView.isHidden = false
+    }
+    @IBAction func sellButton(_ sender: UIButton) {
+        buySellStackView.isHidden = true
+        closeStackView.isHidden = false
+    }
+    @IBOutlet weak var currentPriceLabel: UILabel!
+    @IBAction func historyButton(_ sender: UIButton) {
+
+    }
+
+    @IBOutlet weak var closeStackView: UIStackView!
+    @IBOutlet weak var currentProfitLabel: UILabel!
+    @IBAction func closeButton(_ sender: UIButton) {
+        closeStackView.isHidden = true
+        buySellStackView.isHidden = false
+    }
+
     @IBOutlet weak var eurUsdLineChartView: LineChartView!
 
     let ratesService = RatesService.shared
