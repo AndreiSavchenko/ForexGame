@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2D3867D3FBCBEDA16796565B /* libPods-ForexGame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 333EFAC6B054C70512DAC5FC /* libPods-ForexGame.a */; };
 		4D00D2B7224D1E170075D88B /* Deals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D00D2B6224D1E170075D88B /* Deals.swift */; };
+		4D00D2BA224D75940075D88B /* Deal+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D00D2B8224D75940075D88B /* Deal+CoreDataClass.swift */; };
+		4D00D2BB224D75940075D88B /* Deal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D00D2B9224D75940075D88B /* Deal+CoreDataProperties.swift */; };
 		4D69085E222B35130086A42D /* EurUsdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D69085D222B35130086A42D /* EurUsdViewController.swift */; };
 		4D89B4EF2242DFF40015DC4D /* FreeForexAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D89B4EE2242DFF40015DC4D /* FreeForexAPI.swift */; };
 		4DBEE0FA221D68FF009A4EA4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4DBEE0F9221D68FF009A4EA4 /* Localizable.strings */; };
@@ -20,6 +22,7 @@
 		4DBEE113221E00CF009A4EA4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBEE112221E00CF009A4EA4 /* MainViewController.swift */; };
 		4DBEE115221E0852009A4EA4 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBEE114221E0852009A4EA4 /* RoundedView.swift */; };
 		4DBEE117221EDE42009A4EA4 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBEE116221EDE42009A4EA4 /* RoundedButton.swift */; };
+		4DEDDC1C224E81820042EB2A /* RoundDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEDDC1B224E81820042EB2A /* RoundDouble.swift */; };
 		4DF1ED622243C0BF00D9FC6D /* Decodable+Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1ED612243C0BF00D9FC6D /* Decodable+Dictionary.swift */; };
 		4DF1ED642243C5B700D9FC6D /* ModelPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1ED632243C5B700D9FC6D /* ModelPoint.swift */; };
 		4DF1ED672243F7E800D9FC6D /* RatesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF1ED662243F7E800D9FC6D /* RatesService.swift */; };
@@ -34,6 +37,8 @@
 		1E7561526940559531283BB0 /* Pods-ForexGame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForexGame.debug.xcconfig"; path = "Target Support Files/Pods-ForexGame/Pods-ForexGame.debug.xcconfig"; sourceTree = "<group>"; };
 		333EFAC6B054C70512DAC5FC /* libPods-ForexGame.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ForexGame.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D00D2B6224D1E170075D88B /* Deals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deals.swift; sourceTree = "<group>"; };
+		4D00D2B8224D75940075D88B /* Deal+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deal+CoreDataClass.swift"; sourceTree = "<group>"; };
+		4D00D2B9224D75940075D88B /* Deal+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deal+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		4D69085D222B35130086A42D /* EurUsdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EurUsdViewController.swift; sourceTree = "<group>"; };
 		4D89B4EE2242DFF40015DC4D /* FreeForexAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FreeForexAPI.swift; path = ForexGame/Models/CoreData/FreeForexAPI.swift; sourceTree = SOURCE_ROOT; };
 		4DBEE0DD221D68FF009A4EA4 /* ForexGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForexGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,6 +65,7 @@
 		4DBEE112221E00CF009A4EA4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		4DBEE114221E0852009A4EA4 /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		4DBEE116221EDE42009A4EA4 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		4DEDDC1B224E81820042EB2A /* RoundDouble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundDouble.swift; sourceTree = "<group>"; };
 		4DF1ED612243C0BF00D9FC6D /* Decodable+Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decodable+Dictionary.swift"; sourceTree = "<group>"; };
 		4DF1ED632243C5B700D9FC6D /* ModelPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelPoint.swift; sourceTree = "<group>"; };
 		4DF1ED662243F7E800D9FC6D /* RatesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesService.swift; sourceTree = "<group>"; };
@@ -187,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				4DBEE0E9221D68FF009A4EA4 /* .gitkeep */,
+				4DEDDC1B224E81820042EB2A /* RoundDouble.swift */,
 			);
 			path = Standart;
 			sourceTree = "<group>";
@@ -285,6 +292,8 @@
 			children = (
 				4DF1ED682244380700D9FC6D /* ModelPoint.xcdatamodeld */,
 				4DF1ED70224438DD00D9FC6D /* CoreDataStack.swift */,
+				4D00D2B8224D75940075D88B /* Deal+CoreDataClass.swift */,
+				4D00D2B9224D75940075D88B /* Deal+CoreDataProperties.swift */,
 				4DF1ED6C2244388100D9FC6D /* Point+CoreDataClass.swift */,
 				4DF1ED6D2244388100D9FC6D /* Point+CoreDataProperties.swift */,
 			);
@@ -455,9 +464,12 @@
 				4DBEE115221E0852009A4EA4 /* RoundedView.swift in Sources */,
 				4DF1ED71224438DD00D9FC6D /* CoreDataStack.swift in Sources */,
 				4DF1ED672243F7E800D9FC6D /* RatesService.swift in Sources */,
+				4D00D2BB224D75940075D88B /* Deal+CoreDataProperties.swift in Sources */,
+				4DEDDC1C224E81820042EB2A /* RoundDouble.swift in Sources */,
 				4DF1ED6E2244388100D9FC6D /* Point+CoreDataClass.swift in Sources */,
 				4DF1ED622243C0BF00D9FC6D /* Decodable+Dictionary.swift in Sources */,
 				4DBEE117221EDE42009A4EA4 /* RoundedButton.swift in Sources */,
+				4D00D2BA224D75940075D88B /* Deal+CoreDataClass.swift in Sources */,
 				4DF1ED6F2244388100D9FC6D /* Point+CoreDataProperties.swift in Sources */,
 				4D69085E222B35130086A42D /* EurUsdViewController.swift in Sources */,
 			);

@@ -34,7 +34,7 @@ class RatesService {
                     //print("1 POINT = \(currPoint)")
 
                     let point = Point(context: self.context)
-                    point.pointPrice = currPoint.rates.eurusd.rate
+                    point.pointPrice = currPoint.rates.eurusd.rate.roundToDecimal(5)
                     print("NEW PRICE = \(point.pointPrice)")
                     point.pointTime = currPoint.rates.eurusd.timestamp as NSDate
                     print("NEW TIME = \(String(describing: point.pointTime))")
@@ -60,7 +60,7 @@ class RatesService {
 
     @objc func getPointFromAPIWithTimer(timer: Timer) {
         let currentDateTime = Date()
-        print("Timer fired!\(currentDateTime)")
+        print("Timer ++++++++++++++++++++++++++++++\(currentDateTime)")
         savePointFromAPI()
     }
 }

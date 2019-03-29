@@ -56,7 +56,6 @@ class CoreDataService {
         clearPrevious()
 
         var pointsEurusdAll: [Double] = []
-        var pointsEurusd: [Double] = []
 
         try? fetchedResultsController.performFetch()
         guard let count = fetchedResultsController.fetchedObjects?.count, count > 0 else { return [] }
@@ -75,10 +74,15 @@ class CoreDataService {
                 pointsEurusdAll.insert(pointsEurusdAll[0], at: 0)
             }
         }
+        return pointsEurusdAll
+    }
 
-        pointsEurusd = pointsEurusdAll
-//        print("pointsEurusd = \(pointsEurusd) \(pointsEurusd.count)")
-        return pointsEurusd
+    func lastPrice() -> Double {
+        try? fetchedResultsController.performFetch()
+        guard let countObject = fetchedResultsController.fetchedObjects?.count, countObject > 0 else { return 0 }
+        let lastObject = fetchedResultsController.fetchedObjects?.first
+        let lastPrice = lastObject?.pointPrice
+        return lastPrice ?? 0
     }
 
 }

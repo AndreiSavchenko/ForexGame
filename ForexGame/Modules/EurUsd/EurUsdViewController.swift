@@ -12,32 +12,42 @@ import Moya
 
 class EurUsdViewController: UIViewController {
 
+    let ratesService = RatesService.shared
+    let coreDataService = CoreDataService.shared
+    let deals = Deals.shared
+    var prices: [Double] = []
+
+    @IBOutlet weak var eurUsdLineChartView: LineChartView!
     @IBOutlet weak var buySellStackView: UIStackView!
+    @IBOutlet weak var closeStackView: UIStackView!
+    @IBOutlet weak var currentPriceLabel: UILabel!
+    @IBOutlet weak var currentProfitLabel: UILabel!
+
     @IBAction func buyButton(_ sender: UIButton) {
         buySellStackView.isHidden = true
         closeStackView.isHidden = false
+        let priceCurrent = coreDataService.lastPrice()
+        deals.openDeals(currencyPair: "EurUsd", type: "Buy", timeOpen: NSDate(), priceOpen: priceCurrent)
+
     }
+
     @IBAction func sellButton(_ sender: UIButton) {
         buySellStackView.isHidden = true
         closeStackView.isHidden = false
-    }
-    @IBOutlet weak var currentPriceLabel: UILabel!
-    @IBAction func historyButton(_ sender: UIButton) {
-
+        let priceCurrent = coreDataService.lastPrice()
+        deals.openDeals(currencyPair: "EurUsd", type: "Sell", timeOpen: NSDate(), priceOpen: priceCurrent)
     }
 
-    @IBOutlet weak var closeStackView: UIStackView!
-    @IBOutlet weak var currentProfitLabel: UILabel!
     @IBAction func closeButton(_ sender: UIButton) {
         closeStackView.isHidden = true
         buySellStackView.isHidden = false
+        let priceCurrent = coreDataService.lastPrice()
+        deals.closeDeals(timeClose: NSDate(), priceClose: priceCurrent)
     }
 
-    @IBOutlet weak var eurUsdLineChartView: LineChartView!
+    @IBAction func historyButton(_ sender: UIButton) {
 
-    let ratesService = RatesService.shared
-    let coreDataService = CoreDataService.shared
-    var prices: [Double] = []
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +55,19 @@ class EurUsdViewController: UIViewController {
             guard let self = self else { return }
             self.prices = self.coreDataService.createArrayPointsEurusd()
             self.setChart(prices: self.prices, hasAnimate: false)
+
+            if self.closeStackView.isHidden {
+                self.currentPriceLabel.text = String(self.coreDataService.lastPrice())
+            }
+            if self.buySellStackView.isHidden {
+                let currProfit = self.deals.currProfit()
+                if currProfit > 0 {
+                    self.currentProfitLabel.text = "+"+String(currProfit)+"$"
+                } else {
+                    self.currentProfitLabel.text = String(currProfit)+"$"
+                }
+
+            }
         }
 
         ratesService.downloadPointsToCoreData()
