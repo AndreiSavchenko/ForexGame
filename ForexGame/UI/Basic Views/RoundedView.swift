@@ -15,4 +15,9 @@ class RoundedView: UIView {
         layer.cornerRadius = 10.0
     }
 
+    func border(width: CGFloat) {
+        layer.borderWidth = width
+        layer.borderColor = UIColor.white.cgColor
+    }
+
 }

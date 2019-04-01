@@ -13,6 +13,8 @@ class RoundedButton: UIButton {
     override func awakeFromNib() {
         super.awakeFromNib()
         layer.cornerRadius = 5.0
+        layer.borderWidth = 1
+        layer.borderColor = UIColor.white.cgColor
     }
 
 }

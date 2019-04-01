@@ -12,6 +12,10 @@
 		4D00D2BA224D75940075D88B /* Deal+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D00D2B8224D75940075D88B /* Deal+CoreDataClass.swift */; };
 		4D00D2BB224D75940075D88B /* Deal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D00D2B9224D75940075D88B /* Deal+CoreDataProperties.swift */; };
 		4D69085E222B35130086A42D /* EurUsdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D69085D222B35130086A42D /* EurUsdViewController.swift */; };
+		4D81BF582250106200176681 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D81BF572250106200176681 /* HistoryViewController.swift */; };
+		4D81BF5A225011E700176681 /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D81BF59225011E700176681 /* History.storyboard */; };
+		4D81BF5E2250205B00176681 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D81BF5C2250205B00176681 /* HistoryTableViewCell.swift */; };
+		4D81BF5F2250205B00176681 /* HistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D81BF5D2250205B00176681 /* HistoryTableViewCell.xib */; };
 		4D89B4EF2242DFF40015DC4D /* FreeForexAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D89B4EE2242DFF40015DC4D /* FreeForexAPI.swift */; };
 		4DBEE0FA221D68FF009A4EA4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4DBEE0F9221D68FF009A4EA4 /* Localizable.strings */; };
 		4DBEE0FE221D68FF009A4EA4 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DBEE0FD221D68FF009A4EA4 /* Colors.xcassets */; };
@@ -40,6 +44,10 @@
 		4D00D2B8224D75940075D88B /* Deal+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deal+CoreDataClass.swift"; sourceTree = "<group>"; };
 		4D00D2B9224D75940075D88B /* Deal+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deal+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		4D69085D222B35130086A42D /* EurUsdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EurUsdViewController.swift; sourceTree = "<group>"; };
+		4D81BF572250106200176681 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		4D81BF59225011E700176681 /* History.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = History.storyboard; sourceTree = "<group>"; };
+		4D81BF5C2250205B00176681 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
+		4D81BF5D2250205B00176681 /* HistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryTableViewCell.xib; sourceTree = "<group>"; };
 		4D89B4EE2242DFF40015DC4D /* FreeForexAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FreeForexAPI.swift; path = ForexGame/Models/CoreData/FreeForexAPI.swift; sourceTree = SOURCE_ROOT; };
 		4DBEE0DD221D68FF009A4EA4 /* ForexGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForexGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DBEE0E1221D68FF009A4EA4 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
@@ -106,6 +114,25 @@
 			path = EurUsd;
 			sourceTree = "<group>";
 		};
+		4D81BF562250102700176681 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				4D81BF5B2250200700176681 /* Cell */,
+				4D81BF572250106200176681 /* HistoryViewController.swift */,
+				4D81BF59225011E700176681 /* History.storyboard */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		4D81BF5B2250200700176681 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				4D81BF5C2250205B00176681 /* HistoryTableViewCell.swift */,
+				4D81BF5D2250205B00176681 /* HistoryTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		4DBEE0D3221D68FF009A4EA4 = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				4DBEE0E1221D68FF009A4EA4 /* .gitkeep */,
+				4D81BF562250102700176681 /* History */,
 				4D69085C222B34C40086A42D /* EurUsd */,
 				4DBEE10F221E0077009A4EA4 /* Main */,
 			);
@@ -401,6 +429,8 @@
 				4DBEE102221D68FF009A4EA4 /* LaunchScreen.storyboard in Resources */,
 				4DBEE100221D68FF009A4EA4 /* Assets.xcassets in Resources */,
 				4DBEE0FE221D68FF009A4EA4 /* Colors.xcassets in Resources */,
+				4D81BF5F2250205B00176681 /* HistoryTableViewCell.xib in Resources */,
+				4D81BF5A225011E700176681 /* History.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,8 +498,10 @@
 				4DEDDC1C224E81820042EB2A /* RoundDouble.swift in Sources */,
 				4DF1ED6E2244388100D9FC6D /* Point+CoreDataClass.swift in Sources */,
 				4DF1ED622243C0BF00D9FC6D /* Decodable+Dictionary.swift in Sources */,
+				4D81BF5E2250205B00176681 /* HistoryTableViewCell.swift in Sources */,
 				4DBEE117221EDE42009A4EA4 /* RoundedButton.swift in Sources */,
 				4D00D2BA224D75940075D88B /* Deal+CoreDataClass.swift in Sources */,
+				4D81BF582250106200176681 /* HistoryViewController.swift in Sources */,
 				4DF1ED6F2244388100D9FC6D /* Point+CoreDataProperties.swift in Sources */,
 				4D69085E222B35130086A42D /* EurUsdViewController.swift in Sources */,
 			);

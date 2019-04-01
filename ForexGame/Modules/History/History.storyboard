@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--EurUsdViewController-->
+        <scene sceneID="PPc-jV-NfM">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="EurUsdViewController" id="FRd-fr-5Io" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u67-OX-CG8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="786" y="77"/>
+        </scene>
+        <!--History View Controller-->
+        <scene sceneID="z37-Ll-3KP">
+            <objects>
+                <viewController storyboardIdentifier="HistoryViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Q7p-9v-QZ4" customClass="HistoryViewController" customModule="ForexGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="L1X-vS-MeP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qVG-oc-JFE" userLabel="Name Rounded View" customClass="RoundedView" customModule="ForexGame" customModuleProvider="target">
+                                <rect key="frame" x="10" y="30" width="355" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Orders History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kJN-AD-dIH">
+                                        <rect key="frame" x="108.5" y="3" width="138" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="textColor" name="ColorTextWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CTZ-GJ-MOa">
+                                        <rect key="frame" x="5" y="6" width="51" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" title="back" image="back"/>
+                                        <connections>
+                                            <segue destination="FRd-fr-5Io" kind="show" id="pbH-5n-sBp"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" name="1ColorAquaDark"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="JdX-nZ-tEH"/>
+                                    <constraint firstAttribute="height" constant="30" id="LtJ-ff-NoK"/>
+                                    <constraint firstItem="CTZ-GJ-MOa" firstAttribute="centerY" secondItem="qVG-oc-JFE" secondAttribute="centerY" id="t8p-6d-MHa"/>
+                                    <constraint firstItem="CTZ-GJ-MOa" firstAttribute="leading" secondItem="qVG-oc-JFE" secondAttribute="leading" constant="5" id="xC8-k6-NtI"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="itz-LT-ePo" userLabel="Chart Rounded View" customClass="RoundedView" customModule="ForexGame" customModuleProvider="target">
+                                <rect key="frame" x="10" y="70" width="355" height="177.5"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UeQ-ta-gEz" customClass="LineChartView" customModule="Charts">
+                                        <rect key="frame" x="0.0" y="10" width="355" height="157.5"/>
+                                        <color key="backgroundColor" name="1ColorAquaDark"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" name="1ColorAquaDark"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="UeQ-ta-gEz" secondAttribute="bottom" constant="10" id="8eE-wF-Qzi"/>
+                                    <constraint firstItem="UeQ-ta-gEz" firstAttribute="leading" secondItem="itz-LT-ePo" secondAttribute="leading" id="cOm-bi-Rd1"/>
+                                    <constraint firstAttribute="trailing" secondItem="UeQ-ta-gEz" secondAttribute="trailing" id="fMf-sh-ezH"/>
+                                    <constraint firstItem="UeQ-ta-gEz" firstAttribute="top" secondItem="itz-LT-ePo" secondAttribute="top" constant="10" id="vvf-QS-bZ3"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EMY-aC-I3S" userLabel="TableView Rounded View" customClass="RoundedView" customModule="ForexGame" customModuleProvider="target">
+                                <rect key="frame" x="10" y="257.5" width="355" height="355.5"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UiI-kL-bzE">
+                                        <rect key="frame" x="5" y="5" width="345" height="345.5"/>
+                                        <color key="backgroundColor" name="1ColorAquaDark"/>
+                                        <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="Q7p-9v-QZ4" id="zKc-0C-bmj"/>
+                                            <outlet property="delegate" destination="Q7p-9v-QZ4" id="ib5-vg-xcz"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" name="1ColorAquaDark"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="UiI-kL-bzE" secondAttribute="trailing" constant="5" id="TQi-xq-fPd"/>
+                                    <constraint firstItem="UiI-kL-bzE" firstAttribute="top" secondItem="EMY-aC-I3S" secondAttribute="top" constant="5" id="WBW-7b-2w7"/>
+                                    <constraint firstAttribute="bottom" secondItem="UiI-kL-bzE" secondAttribute="bottom" constant="5" id="a15-CR-y2f"/>
+                                    <constraint firstItem="UiI-kL-bzE" firstAttribute="leading" secondItem="EMY-aC-I3S" secondAttribute="leading" constant="5" id="mlZ-S1-pvB"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" name="1ColorBlack"/>
+                        <constraints>
+                            <constraint firstItem="itz-LT-ePo" firstAttribute="leading" secondItem="y3C-6F-PWT" secondAttribute="leading" constant="10" id="2Xd-vJ-w35"/>
+                            <constraint firstItem="EMY-aC-I3S" firstAttribute="height" secondItem="itz-LT-ePo" secondAttribute="height" multiplier="2" id="AzH-Ht-gbf"/>
+                            <constraint firstItem="y3C-6F-PWT" firstAttribute="trailing" secondItem="itz-LT-ePo" secondAttribute="trailing" constant="10" id="CS0-xD-nq5"/>
+                            <constraint firstItem="y3C-6F-PWT" firstAttribute="trailing" secondItem="qVG-oc-JFE" secondAttribute="trailing" constant="10" id="F8G-kY-Jx7"/>
+                            <constraint firstItem="itz-LT-ePo" firstAttribute="top" secondItem="qVG-oc-JFE" secondAttribute="bottom" constant="10" id="LHe-3G-yQI"/>
+                            <constraint firstItem="y3C-6F-PWT" firstAttribute="bottom" secondItem="EMY-aC-I3S" secondAttribute="bottom" constant="10" id="Ost-3J-AKq"/>
+                            <constraint firstItem="y3C-6F-PWT" firstAttribute="trailing" secondItem="EMY-aC-I3S" secondAttribute="trailing" constant="10" id="URP-9n-OYB"/>
+                            <constraint firstItem="qVG-oc-JFE" firstAttribute="leading" secondItem="y3C-6F-PWT" secondAttribute="leading" constant="10" id="Wtp-PR-0ZH"/>
+                            <constraint firstItem="EMY-aC-I3S" firstAttribute="top" secondItem="itz-LT-ePo" secondAttribute="bottom" constant="10" id="iHf-rb-gUG"/>
+                            <constraint firstItem="qVG-oc-JFE" firstAttribute="top" secondItem="y3C-6F-PWT" secondAttribute="top" constant="10" id="o1b-gR-oBy"/>
+                            <constraint firstItem="EMY-aC-I3S" firstAttribute="leading" secondItem="y3C-6F-PWT" secondAttribute="leading" constant="10" id="xLe-l2-8CT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="y3C-6F-PWT"/>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="historyTableView" destination="UiI-kL-bzE" id="zIl-Yd-GsZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pqB-OF-9dp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="164" y="77.811094452773617"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="back" width="17" height="17"/>
+        <namedColor name="1ColorAquaDark">
+            <color red="0.0" green="0.60392156862745094" blue="0.69019607843137254" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="1ColorBlack">
+            <color red="0.0" green="0.0" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ColorTextWhite">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

@@ -2,7 +2,7 @@
 //  Deal+CoreDataProperties.swift
 //  ForexGame
 //
-//  Created by Alla on 3/29/19.
+//  Created by Alla on 3/30/19.
 //  Copyright © 2019 AndreiSavchenko. All rights reserved.
 //
 //
@@ -23,5 +23,6 @@ extension Deal {
     @NSManaged public var timeClose: NSDate?
     @NSManaged public var timeOpen: NSDate?
     @NSManaged public var type: String?
+    @NSManaged public var balanceFix: Int32
 
 }

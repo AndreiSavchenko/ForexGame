@@ -53,7 +53,7 @@ class RatesService {
         if isWorking { return }
         isWorking = true
 
-        let timer = Timer(timeInterval: 10.0, target: self, selector: #selector(getPointFromAPIWithTimer),
+        let timer = Timer(timeInterval: 15.0, target: self, selector: #selector(getPointFromAPIWithTimer),
                           userInfo: nil, repeats: true)
         RunLoop.current.add(timer, forMode: .common)
     }
