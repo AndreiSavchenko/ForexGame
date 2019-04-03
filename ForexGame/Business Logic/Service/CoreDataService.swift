@@ -31,10 +31,11 @@ class CoreDataService {
         return controller
     }()
 
-    func clearPrevious() {
+    // MARK: - CLEAR OLD POINTS
 
-        try? fetchedResultsController.performFetch() // Fetch new 20
-        let current = fetchedResultsController.fetchedObjects ?? [] // 20
+    func clearPrevious() {
+        try? fetchedResultsController.performFetch()
+        let current = fetchedResultsController.fetchedObjects ?? []
         guard current.count == 20 else { return }
         let currentPointTimes: [NSDate] = current.compactMap { $0.pointTime }
 
@@ -43,7 +44,6 @@ class CoreDataService {
         deleteFetchRequest.predicate = NSPredicate(format: "NOT pointTime IN %@", currentPointTimes)
         let deleteBatchRequest = NSBatchDeleteRequest(fetchRequest:
             (deleteFetchRequest as! NSFetchRequest<NSFetchRequestResult>))
-
         do {
             try context.execute(deleteBatchRequest)
         } catch {
@@ -51,22 +51,17 @@ class CoreDataService {
         }
     }
 
+    // MARK: - CREATE ARRAY POINTS
+
     func createArrayPointsEurusd() -> [Double] {
         clearPrevious()
-
         var pointsEurusdAll: [Double] = []
-
         try? fetchedResultsController.performFetch()
         guard let count = fetchedResultsController.fetchedObjects?.count, count > 0 else { return [] }
-//        print("count = \(count)")
         for i in 0..<count {
             pointsEurusdAll.append((fetchedResultsController.fetchedObjects?[i].pointPrice)!)
         }
         pointsEurusdAll.reverse()
-
-//        Проверка на нехватку истории
-//        pointsEurusdAll = [1.23440, 1.23443, 1.23444, 1.2345, 1.2346]
-
         if pointsEurusdAll.count<20 {
             let countAddPoints = 20 - pointsEurusdAll.count
             for _ in 0..<countAddPoints {
@@ -75,6 +70,8 @@ class CoreDataService {
         }
         return pointsEurusdAll
     }
+
+    // MARK: - LAST PRICE POINTS
 
     func lastPrice() -> Double {
         try? fetchedResultsController.performFetch()

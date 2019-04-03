@@ -17,6 +17,8 @@ class Deals {
     let coreDataService = CoreDataService.shared
     let context = CoreDataStack.shared.persistentContainer.viewContext
 
+    // MARK: - fetchedResultsController LAST DEAL
+
     private lazy var fetchedResultsController: NSFetchedResultsController<Deal> = {
         let fetchRequest: NSFetchRequest<Deal> = Deal.fetchRequest()
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "timeOpen", ascending: false)]
@@ -31,6 +33,8 @@ class Deals {
         try? controller.performFetch()
         return controller
     }()
+
+    // MARK: - fetchedResultsController AllClose
 
     private lazy var fetchedResultsControllerAllClose: NSFetchedResultsController<Deal> = {
         let fetchRequest: NSFetchRequest<Deal> = Deal.fetchRequest()
@@ -47,20 +51,9 @@ class Deals {
         return controller
     }()
 
-    func getAllCloseDeals() -> [Deal] {
-
-        try? fetchedResultsController.performFetch()
-        guard let arrDeals = fetchedResultsControllerAllClose.fetchedObjects else { return [] }
-        guard let countDeals = fetchedResultsControllerAllClose.fetchedObjects?.count, countDeals > 0 else { return [] }
-//        for i in 0 ..< countDeals {
-//            print("profit \(i) = \(arrDeals[i].profit)")
-//        }
-//        print(arrDeals)
-        return arrDeals
-    }
+    // MARK: - SAVE COREDATA OPENED PROPERTIES DEAL
 
     func openDeals(currencyPair: String, type: String, timeOpen: NSDate, priceOpen: Double) {
-
         let deal = Deal(context: self.context)
         deal.currencyPair = currencyPair
         deal.type = type
@@ -71,17 +64,14 @@ class Deals {
         } else {
             deal.balanceFix = 10000
         }
-
         try? self.context.save()
-
-//        print("deal = \(deal)")
     }
 
-    func closeDeals(timeClose: NSDate, priceClose: Double) {
+    // MARK: - SAVE COREDATA CLOSED PROPERTIES DEAL
 
+    func closeDeals(timeClose: NSDate, priceClose: Double) {
         try? fetchedResultsController.performFetch()
         guard let lastDeal = fetchedResultsController.fetchedObjects?.last else { return }
-
         lastDeal.timeClose = timeClose
         lastDeal.priceClose = priceClose
         if lastDeal.type == "Buy" {
@@ -91,10 +81,20 @@ class Deals {
             lastDeal.profit = Int32(((lastDeal.priceOpen - priceClose)*1000000))
             lastDeal.balanceFix += Int32(((lastDeal.priceOpen - priceClose)*1000000))
         }
-
         try? self.context.save()
+    }
 
-//        print("lastDeal = \(lastDeal)")
+    // MARK: - ADDITIONAL FUNC FOR DEALS
+
+    func getAllCloseDeals() -> [Deal] {
+        try? fetchedResultsControllerAllClose.performFetch()
+        guard let arrDeals = fetchedResultsControllerAllClose.fetchedObjects else { return [] }
+        guard let countDeals = fetchedResultsControllerAllClose.fetchedObjects?.count, countDeals > 0 else { return [] }
+        //        for i in 0 ..< countDeals {
+        //            print("profit \(i) = \(arrDeals[i].timeClose)")
+        //        }
+//        print(arrDeals)
+        return arrDeals
     }
 
     func currProfit() -> Int32 {
@@ -134,7 +134,6 @@ class Deals {
     func getBalance() -> Int32 {
         try? fetchedResultsControllerAllClose.performFetch()
         guard let lastDeal = fetchedResultsControllerAllClose.fetchedObjects?.first else { return 0 }
-//        print("lastDeal.balanceFix = \(lastDeal.balanceFix)")
         return lastDeal.balanceFix
     }
 

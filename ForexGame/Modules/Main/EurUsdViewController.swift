@@ -37,47 +37,8 @@ class EurUsdViewController: UIViewController {
     @IBOutlet weak var winLossProcLabel: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var iconHumanImageView: UIImageView!
-    
-    
 
-    @IBAction func buyButton(_ sender: UIButton) {
-        buySellStackView.isHidden = true
-        closeStackView.isHidden = false
-        let priceCurrent = coreDataService.lastPrice()
-        deals.openDeals(currencyPair: "EurUsd", type: "Buy", timeOpen: NSDate(), priceOpen: priceCurrent)
-//        dealParamLabel.text = deals.typeOpenDeal()+" at "+String(deals.priceOpenDeal())
-        ratesService.savePointFromAPI()
-    }
-
-    @IBAction func sellButton(_ sender: UIButton) {
-        buySellStackView.isHidden = true
-        closeStackView.isHidden = false
-        let priceCurrent = coreDataService.lastPrice()
-        deals.openDeals(currencyPair: "EurUsd", type: "Sell", timeOpen: NSDate(), priceOpen: priceCurrent)
-//        dealParamLabel.text = deals.typeOpenDeal()+" at "+String(deals.priceOpenDeal())
-        ratesService.savePointFromAPI()
-    }
-
-    @IBAction func closeButton(_ sender: UIButton) {
-        closeStackView.isHidden = true
-        buySellStackView.isHidden = false
-        let priceCurrent = coreDataService.lastPrice()
-        deals.closeDeals(timeClose: NSDate(), priceClose: priceCurrent)
-        updateBalance()
-        ratesService.savePointFromAPI()
-    }
-
-    @IBAction func historyButton(_ sender: UIButton) {
-
-    }
-
-    func alertNotInet() {
-        let alertNotInet = UIAlertController(title: "No internet access",
-                                      message: "Data will not be updated.\nPlease try again later ...",
-                                      preferredStyle: .alert)
-        alertNotInet.addAction(UIAlertAction(title: "Ok", style: .default))
-        self.present(alertNotInet, animated: true, completion: nil)
-    }
+    // MARK: - viewDidAppear, viewDidLoad
 
     override func viewDidAppear(_ animated: Bool) {
         if !Connectivity.isConnectedToInternet {
@@ -90,7 +51,7 @@ class EurUsdViewController: UIViewController {
         super.viewDidLoad()
 //        deals.clearAllDeals()
 
-        updateEurUsd()
+        updateEurUsdChart()
         ratesService.savePointFromAPI()
         updateBalance()
         ratesService.downloadPointsToCoreData()
@@ -108,12 +69,53 @@ class EurUsdViewController: UIViewController {
         }
     }
 
+    // MARK: - OPEN BUY ORDER
+
+    @IBAction func buyButton(_ sender: UIButton) {
+        buySellStackView.isHidden = true
+        closeStackView.isHidden = false
+        let priceCurrent = coreDataService.lastPrice()
+        deals.openDeals(currencyPair: "EurUsd", type: "Buy", timeOpen: NSDate(), priceOpen: priceCurrent)
+        ratesService.savePointFromAPI()
+    }
+
+    // MARK: - OPEN SELL ORDER
+
+    @IBAction func sellButton(_ sender: UIButton) {
+        buySellStackView.isHidden = true
+        closeStackView.isHidden = false
+        let priceCurrent = coreDataService.lastPrice()
+        deals.openDeals(currencyPair: "EurUsd", type: "Sell", timeOpen: NSDate(), priceOpen: priceCurrent)
+        ratesService.savePointFromAPI()
+    }
+
+    // MARK: - CLOSE ORDER
+
+    @IBAction func closeButton(_ sender: UIButton) {
+        closeStackView.isHidden = true
+        buySellStackView.isHidden = false
+        let priceCurrent = coreDataService.lastPrice()
+        deals.closeDeals(timeClose: NSDate(), priceClose: priceCurrent)
+        updateBalance()
+        ratesService.savePointFromAPI()
+    }
+
+    // MARK: - ALERT NOT INTERNET
+
+    func alertNotInet() {
+        let alertNotInet = UIAlertController(title: "No internet access",
+                                      message: "Data will not be updated.\nPlease try again later ...",
+                                      preferredStyle: .alert)
+        alertNotInet.addAction(UIAlertAction(title: "Ok", style: .default))
+        self.present(alertNotInet, animated: true, completion: nil)
+    }
+
+    // MARK: - UPDATE BALANCE AND PROGRESS WIN, LOSS
+
     func updateBalance() {
         if deals.getBalance() > 0 {
-//            print("deals.getBalance() > 0 = \(deals.getBalance())")
             balanceLabel.text = String(deals.getBalance())
         } else {
-//            print("deals.getBalance() <= 0 = \(deals.getBalance())")
             balanceLabel.text = "10000"
         }
         let dealsAllClose: [Deal] = deals.getAllCloseDeals()
@@ -140,6 +142,41 @@ class EurUsdViewController: UIViewController {
         }
     }
 
+    // MARK: - UPDATE PRICES CHART EURUSD
+
+    func updateEurUsdChart() {
+        ratesService.onPricesUpdated = { [weak self] in
+            guard let self = self else { return }
+            self.prices = self.coreDataService.createArrayPointsEurusd()
+            self.updateBalance()
+            self.timer.invalidate()
+            self.timeValue = 10
+            self.createTimer()
+
+            // Open order check
+            if self.deals.isOpenDeal() {
+                self.setChartWithDeal(prices: self.prices, priceDeal: self.deals.priceOpenDeal(),
+                                      typeDeal: self.deals.typeOpenDeal(), hasAnimate: false)
+            } else {
+                self.setChart(prices: self.prices, hasAnimate: false)
+            }
+            if self.closeStackView.isHidden {
+                self.currentPriceLabel.text = String(self.coreDataService.lastPrice())
+            }
+            if self.buySellStackView.isHidden {
+                let currProfit = self.deals.currProfit()
+                self.dealParamLabel.text = self.deals.typeOpenDeal()+" at "+String(self.deals.priceOpenDeal())
+                if currProfit > 0 {
+                    self.currentProfitLabel.text = "+"+String(currProfit)+"$"
+                } else {
+                    self.currentProfitLabel.text = String(currProfit)+"$"
+                }
+            }
+        }
+    }
+
+    // MARK: - SET CHART WITHOUT ORDER
+
     func setChart(prices: [Double], hasAnimate: Bool) {
         guard !prices.isEmpty else { return }
         var dataEntries: [ChartDataEntry] = []
@@ -155,6 +192,8 @@ class EurUsdViewController: UIViewController {
             dataEntriesCurr.append(dataEntryCurr)
         }
 
+        //--- Line set price ---
+
         let lineChartDataSet = LineChartDataSet(values: dataEntries, label: "EUR/USD")
         lineChartDataSet.mode = .cubicBezier
         lineChartDataSet.drawCirclesEnabled = false         // без кругов
@@ -166,12 +205,16 @@ class EurUsdViewController: UIViewController {
         lineChartDataSet.fill = Fill.fillWithLinearGradient(gradient, angle: 90.0)
         lineChartDataSet.drawFilledEnabled = true
 
+        //--- Line set current price ---
+
         let lineChartDataSetCurr = LineChartDataSet(values: dataEntriesCurr, label: "EUR/USD Curr")
         lineChartDataSetCurr.mode = .cubicBezier
         lineChartDataSetCurr.drawCirclesEnabled = false         // без кругов
         lineChartDataSetCurr.colors = [NSUIColor.init(named: "myWhite")] as! [NSUIColor]
         lineChartDataSetCurr.lineWidth = 1.0
         lineChartDataSetCurr.drawValuesEnabled = false
+
+        //--- Chart set ---
 
         let lineChartData = LineChartData(dataSets: [lineChartDataSet, lineChartDataSetCurr])
         eurUsdLineChartView.data = lineChartData
@@ -187,11 +230,12 @@ class EurUsdViewController: UIViewController {
         eurUsdLineChartView.rightAxis.drawAxisLineEnabled = true
         eurUsdLineChartView.rightAxis.drawGridLinesEnabled = true
         eurUsdLineChartView.legend.enabled = false
-
         if hasAnimate {
             eurUsdLineChartView.animate(xAxisDuration: 1.5)
         }
     }
+
+    // MARK: - SET CHART WITH ORDER
 
     func setChartWithDeal(prices: [Double], priceDeal: Double, typeDeal: String, hasAnimate: Bool) {
         guard !prices.isEmpty else { return }
@@ -214,6 +258,8 @@ class EurUsdViewController: UIViewController {
             dataEntriesDeal.append(dataEntryDeal)
         }
 
+        //--- Line set price ---
+
         let lineChartDataSet = LineChartDataSet(values: dataEntries, label: "EUR/USD")
         lineChartDataSet.mode = .cubicBezier
         lineChartDataSet.drawCirclesEnabled = false         // без кругов
@@ -225,12 +271,16 @@ class EurUsdViewController: UIViewController {
         lineChartDataSet.fill = Fill.fillWithLinearGradient(gradient, angle: 90.0)
         lineChartDataSet.drawFilledEnabled = true
 
+        //--- Line set current price ---
+
         let lineChartDataSetCurr = LineChartDataSet(values: dataEntriesCurr, label: "EUR/USD Curr")
         lineChartDataSetCurr.mode = .cubicBezier
         lineChartDataSetCurr.drawCirclesEnabled = false         // без кругов
         lineChartDataSetCurr.colors = [NSUIColor.init(named: "myWhite")] as! [NSUIColor]
         lineChartDataSetCurr.lineWidth = 1.0
         lineChartDataSetCurr.drawValuesEnabled = false
+
+        //--- Line set opened order ---
 
         let lineChartDataSetDeal = LineChartDataSet(values: dataEntriesDeal, label: "Price Deal")
         lineChartDataSetDeal.mode = .cubicBezier
@@ -240,9 +290,10 @@ class EurUsdViewController: UIViewController {
         } else {
             lineChartDataSetDeal.colors = [NSUIColor.init(named: "myRed")] as! [NSUIColor]
         }
-
         lineChartDataSetDeal.lineWidth = 2.0
         lineChartDataSetDeal.drawValuesEnabled = false
+
+        //--- Chart set ---
 
         let lineChartData = LineChartData(dataSets: [lineChartDataSet, lineChartDataSetCurr, lineChartDataSetDeal])
         eurUsdLineChartView.data = lineChartData
@@ -258,11 +309,12 @@ class EurUsdViewController: UIViewController {
         eurUsdLineChartView.rightAxis.drawAxisLineEnabled = true
         eurUsdLineChartView.rightAxis.drawGridLinesEnabled = true
         eurUsdLineChartView.legend.enabled = false
-
         if hasAnimate {
             eurUsdLineChartView.animate(xAxisDuration: 1.5)
         }
     }
+
+    // MARK: - TIMER ON CHART
 
     func createTimer() {
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self,
@@ -270,6 +322,7 @@ class EurUsdViewController: UIViewController {
                                      userInfo: nil, repeats: true)
     }
 
+    // Selector for Timer
     @objc func updateSeconds() {
         if timeValue > 0 {
             timeValue -= 1
@@ -291,47 +344,14 @@ class EurUsdViewController: UIViewController {
             timer.invalidate()
         }
     }
-
-    func updateEurUsd() {
-        ratesService.onPricesUpdated = { [weak self] in
-            guard let self = self else { return }
-            self.prices = self.coreDataService.createArrayPointsEurusd()
-            self.updateBalance()
-            self.timer.invalidate()
-            self.timeValue = 10
-            self.createTimer()
-
-            if self.deals.isOpenDeal() {
-                self.setChartWithDeal(prices: self.prices, priceDeal: self.deals.priceOpenDeal(),
-                                      typeDeal: self.deals.typeOpenDeal(), hasAnimate: false)
-            } else {
-                self.setChart(prices: self.prices, hasAnimate: false)
-            }
-
-            if self.closeStackView.isHidden {
-                self.currentPriceLabel.text = String(self.coreDataService.lastPrice())
-            }
-            if self.buySellStackView.isHidden {
-                let currProfit = self.deals.currProfit()
-                self.dealParamLabel.text = self.deals.typeOpenDeal()+" at "+String(self.deals.priceOpenDeal())
-                if currProfit > 0 {
-                    self.currentProfitLabel.text = "+"+String(currProfit)+"$"
-                } else {
-                    self.currentProfitLabel.text = String(currProfit)+"$"
-                }
-            }
-        }
-    }
 }
 
+// MARK: - GRADIENT FOR CHART
 private func getGradientFilling() -> CGGradient {
-//    let colorTop = UIColor(red: 141/255, green: 133/255, blue: 220/255, alpha: 1).cgColor
     let colorTop = UIColor(named: "myWhite")!.cgColor
     let colorBotton = UIColor(named: "myAqua")!.cgColor
     let colorsGradient = [colorTop, colorBotton] as CFArray
     let colorLocations: [CGFloat] = [0.7, 0.0]
-
     return CGGradient.init(colorsSpace: CGColorSpaceCreateDeviceRGB(),
-                           colors: colorsGradient,
-                           locations: colorLocations)!
+                           colors: colorsGradient, locations: colorLocations)!
 }

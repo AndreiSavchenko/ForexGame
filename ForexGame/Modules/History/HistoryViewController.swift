@@ -31,7 +31,26 @@ class HistoryViewController: UIViewController {
         return controller
     }()
 
+    // MARK: - viewDidAppear, viewDidLoad
+
+    // If no orders are leaving history
+    override func viewDidAppear(_ animated: Bool) {
+        if fetchedResultsController.fetchedObjects?.count == 0 {
+            alertNotOrders()
+        }
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setChartBalance(profit: createArrayBalanceHistory(), hasAnimate: true)
+        let cellNib = UINib(nibName: "HistoryTableViewCell", bundle: nil)
+        historyTableView.register(cellNib, forCellReuseIdentifier: HistoryTableViewCell.reuseIdentifier)
+    }
+
+    // MARK: - SET CHART
+
     func setChartBalance(profit: [Double], hasAnimate: Bool) {
+
         guard !profit.isEmpty else { return }
         var dataEntries: [ChartDataEntry] = []
         var dataEntriesStart: [ChartDataEntry] = []
@@ -46,6 +65,8 @@ class HistoryViewController: UIViewController {
             dataEntriesStart.append(dataEntryStart)
         }
 
+        //--- Line set Balance ---
+
         let lineChartDataSet = LineChartDataSet(values: dataEntries, label: "Balance")
         lineChartDataSet.mode = .cubicBezier
         lineChartDataSet.drawCirclesEnabled = false         // без кругов
@@ -53,9 +74,9 @@ class HistoryViewController: UIViewController {
         lineChartDataSet.lineWidth = 2.5
         lineChartDataSet.cubicIntensity = 0.2
         lineChartDataSet.drawValuesEnabled = false
-//        let gradient = getGradientFilling()
-//        lineChartDataSet.fill = Fill.fillWithLinearGradient(gradient, angle: 90.0)
         lineChartDataSet.drawFilledEnabled = true
+
+        //--- Line set base ---
 
         let lineChartDataSetStart = LineChartDataSet(values: dataEntriesStart, label: "Balance Start")
         lineChartDataSetStart.mode = .cubicBezier
@@ -63,8 +84,9 @@ class HistoryViewController: UIViewController {
         lineChartDataSetStart.lineWidth = 1.5
         lineChartDataSetStart.drawValuesEnabled = false
 
+        //--- Chart set ---
+
         let lineChartData = LineChartData(dataSets: [lineChartDataSet, lineChartDataSetStart])
-//        let lineChartData = LineChartData(dataSets: [lineChartDataSet])
         balanceLineChartView.data = lineChartData
         balanceLineChartView.setScaleEnabled(false)
         balanceLineChartView.drawGridBackgroundEnabled = false
@@ -78,27 +100,30 @@ class HistoryViewController: UIViewController {
         balanceLineChartView.rightAxis.drawAxisLineEnabled = true
         balanceLineChartView.rightAxis.drawGridLinesEnabled = true
         balanceLineChartView.legend.enabled = false
-
         if hasAnimate {
             balanceLineChartView.animate(xAxisDuration: 1.5)
         }
     }
 
+    // Create array praces for set chart
+
     func createArrayBalanceHistory() -> [Double] {
+
         var arrBalance: [Double] = []
 
         try? fetchedResultsController.performFetch()
-
         guard let count = fetchedResultsController.fetchedObjects?.count, count > 0 else { return [] }
-            for i in 0..<count {
-                arrBalance.append(Double((fetchedResultsController.fetchedObjects?[i].balanceFix)!))
-            }
+        for i in 0..<count {
+            arrBalance.append(Double((fetchedResultsController.fetchedObjects?[i].balanceFix)!))
+        }
         arrBalance.reverse()
         arrBalance.insert(10000, at: 0)
         return arrBalance
     }
 
-    func alert() {
+    // MARK: - ALERT NOT ORDERS
+
+    func alertNotOrders() {
         let alert = UIAlertController(title: "Oops !!!",
                                       message: "You have no orders yet ;)",
                                       preferredStyle: .alert)
@@ -111,22 +136,9 @@ class HistoryViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        if fetchedResultsController.fetchedObjects?.count == 0 {
-            alert()
-        }
-    }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        setChartBalance(profit: createArrayBalanceHistory(), hasAnimate: true)
-
-        let cellNib = UINib(nibName: "HistoryTableViewCell", bundle: nil)
-        historyTableView.register(cellNib, forCellReuseIdentifier: HistoryTableViewCell.reuseIdentifier)
-
-    }
-
 }
+
+// MARK: - extension UITableViewDataSource, UITableViewDelegate
 
 extension HistoryViewController: UITableViewDataSource, UITableViewDelegate {
 
@@ -152,11 +164,6 @@ extension HistoryViewController: UITableViewDataSource, UITableViewDelegate {
                 UIColor(named: "myOrange")
         }
 
-//        let currencyPair = fetchedResultsController.fetchedObjects?[indexPath.row].currencyPair
-//        let type = fetchedResultsController.fetchedObjects?[indexPath.row].type
-//        guard let balanceCell = fetchedResultsController.fetchedObjects?[indexPath.row].balanceFix else { return cell }
-//
-//        (cell as? HistoryTableViewCell)?.profitLabel.text = profitString + " " + currencyPair + " " + type + " Balance:" + balanceCell
         (cell as? HistoryTableViewCell)?.profitLabel.text = profitString
         (cell as? HistoryTableViewCell)?.currencyPairLabel.text =
             fetchedResultsController.fetchedObjects?[indexPath.row].currencyPair
@@ -168,6 +175,8 @@ extension HistoryViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
 }
+
+// MARK: - extension NSFetchedResultsControllerDelegate
 
 extension HistoryViewController: NSFetchedResultsControllerDelegate {
 
