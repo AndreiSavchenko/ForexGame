@@ -9,13 +9,22 @@
 import UIKit
 import Charts
 import Moya
+import Alamofire
 
 class EurUsdViewController: UIViewController {
+
+    class Connectivity {
+        class var isConnectedToInternet: Bool {
+            return NetworkReachabilityManager()!.isReachable
+        }
+    }
 
     let ratesService = RatesService.shared
     let coreDataService = CoreDataService.shared
     let deals = Deals.shared
     var prices: [Double] = []
+    var timeValue: Int = 10
+    var timer = Timer()
 
     @IBOutlet weak var eurUsdLineChartView: LineChartView!
     @IBOutlet weak var buySellStackView: UIStackView!
@@ -26,6 +35,10 @@ class EurUsdViewController: UIViewController {
     @IBOutlet weak var balanceLabel: UILabel!
     @IBOutlet weak var winLossProgressView: UIProgressView!
     @IBOutlet weak var winLossProcLabel: UILabel!
+    @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var iconHumanImageView: UIImageView!
+    
+    
 
     @IBAction func buyButton(_ sender: UIButton) {
         buySellStackView.isHidden = true
@@ -58,9 +71,25 @@ class EurUsdViewController: UIViewController {
 
     }
 
+    func alertNotInet() {
+        let alertNotInet = UIAlertController(title: "No internet access",
+                                      message: "Data will not be updated.\nPlease try again later ...",
+                                      preferredStyle: .alert)
+        alertNotInet.addAction(UIAlertAction(title: "Ok", style: .default))
+        self.present(alertNotInet, animated: true, completion: nil)
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        if !Connectivity.isConnectedToInternet {
+            print("Not internet.")
+            alertNotInet()
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 //        deals.clearAllDeals()
+
         updateEurUsd()
         ratesService.savePointFromAPI()
         updateBalance()
@@ -81,12 +110,12 @@ class EurUsdViewController: UIViewController {
 
     func updateBalance() {
         if deals.getBalance() > 0 {
+//            print("deals.getBalance() > 0 = \(deals.getBalance())")
             balanceLabel.text = String(deals.getBalance())
         } else {
+//            print("deals.getBalance() <= 0 = \(deals.getBalance())")
             balanceLabel.text = "10000"
-            //deal.balanceFix = 10000
         }
-        balanceLabel.text = String(deals.getBalance())
         let dealsAllClose: [Deal] = deals.getAllCloseDeals()
         guard dealsAllClose != [] else { return }
         var winValue: Float = 0
@@ -102,8 +131,13 @@ class EurUsdViewController: UIViewController {
                 allDealsCount += 1
             }
         }
-        winLossProgressView.progress = winValue / allDealsCount
-        winLossProcLabel.text = String(Int((winValue / allDealsCount)*100))+"%"
+        let procWin = winValue / allDealsCount
+        winLossProgressView.progress = procWin
+        if procWin.isNaN {
+            winLossProcLabel.text = "50%"
+        } else {
+            winLossProcLabel.text = String( Int((winValue / allDealsCount) * 100)) + "%"
+        }
     }
 
     func setChart(prices: [Double], hasAnimate: Bool) {
@@ -124,7 +158,7 @@ class EurUsdViewController: UIViewController {
         let lineChartDataSet = LineChartDataSet(values: dataEntries, label: "EUR/USD")
         lineChartDataSet.mode = .cubicBezier
         lineChartDataSet.drawCirclesEnabled = false         // без кругов
-        lineChartDataSet.colors = [NSUIColor.white]
+        lineChartDataSet.colors = [NSUIColor.init(named: "myWhite")] as! [NSUIColor]
         lineChartDataSet.lineWidth = 2.5
         lineChartDataSet.cubicIntensity = 0.2
         lineChartDataSet.drawValuesEnabled = false
@@ -135,7 +169,7 @@ class EurUsdViewController: UIViewController {
         let lineChartDataSetCurr = LineChartDataSet(values: dataEntriesCurr, label: "EUR/USD Curr")
         lineChartDataSetCurr.mode = .cubicBezier
         lineChartDataSetCurr.drawCirclesEnabled = false         // без кругов
-        lineChartDataSetCurr.colors = [NSUIColor.white]
+        lineChartDataSetCurr.colors = [NSUIColor.init(named: "myWhite")] as! [NSUIColor]
         lineChartDataSetCurr.lineWidth = 1.0
         lineChartDataSetCurr.drawValuesEnabled = false
 
@@ -183,7 +217,7 @@ class EurUsdViewController: UIViewController {
         let lineChartDataSet = LineChartDataSet(values: dataEntries, label: "EUR/USD")
         lineChartDataSet.mode = .cubicBezier
         lineChartDataSet.drawCirclesEnabled = false         // без кругов
-        lineChartDataSet.colors = [NSUIColor.white]
+        lineChartDataSet.colors = [NSUIColor.init(named: "myWhite")] as! [NSUIColor]
         lineChartDataSet.lineWidth = 2.5
         lineChartDataSet.cubicIntensity = 0.2
         lineChartDataSet.drawValuesEnabled = false
@@ -194,7 +228,7 @@ class EurUsdViewController: UIViewController {
         let lineChartDataSetCurr = LineChartDataSet(values: dataEntriesCurr, label: "EUR/USD Curr")
         lineChartDataSetCurr.mode = .cubicBezier
         lineChartDataSetCurr.drawCirclesEnabled = false         // без кругов
-        lineChartDataSetCurr.colors = [NSUIColor.white]
+        lineChartDataSetCurr.colors = [NSUIColor.init(named: "myWhite")] as! [NSUIColor]
         lineChartDataSetCurr.lineWidth = 1.0
         lineChartDataSetCurr.drawValuesEnabled = false
 
@@ -202,9 +236,9 @@ class EurUsdViewController: UIViewController {
         lineChartDataSetDeal.mode = .cubicBezier
         lineChartDataSetDeal.drawCirclesEnabled = false         // без кругов
         if typeDeal == "Buy" {
-            lineChartDataSetDeal.colors = [NSUIColor.init(named: "1ColorGreen")] as! [NSUIColor]
+            lineChartDataSetDeal.colors = [NSUIColor.init(named: "myGreen")] as! [NSUIColor]
         } else {
-            lineChartDataSetDeal.colors = [NSUIColor.init(named: "AdditionalColor")] as! [NSUIColor]
+            lineChartDataSetDeal.colors = [NSUIColor.init(named: "myRed")] as! [NSUIColor]
         }
 
         lineChartDataSetDeal.lineWidth = 2.0
@@ -230,11 +264,43 @@ class EurUsdViewController: UIViewController {
         }
     }
 
+    func createTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self,
+                                     selector: #selector(updateSeconds),
+                                     userInfo: nil, repeats: true)
+    }
+
+    @objc func updateSeconds() {
+        if timeValue > 0 {
+            timeValue -= 1
+            switch timeValue {
+            case 6, 7, 8, 9, 10:
+                timerLabel.textColor = UIColor.init(named: "myAquaLight")
+                timerLabel.text = "\(timeValue)"
+            case 3, 4, 5:
+                timerLabel.textColor = UIColor.init(named: "myOrange")
+                timerLabel.text = "\(timeValue)"
+            case 0, 1, 2:
+                timerLabel.textColor = UIColor.init(named: "myRed")
+                timerLabel.text = "\(timeValue)"
+            default: break
+            }
+        } else {
+            timerLabel.textColor = UIColor.init(named: "myRed")
+            timerLabel.text = "0"
+            timer.invalidate()
+        }
+    }
+
     func updateEurUsd() {
         ratesService.onPricesUpdated = { [weak self] in
             guard let self = self else { return }
             self.prices = self.coreDataService.createArrayPointsEurusd()
             self.updateBalance()
+            self.timer.invalidate()
+            self.timeValue = 10
+            self.createTimer()
+
             if self.deals.isOpenDeal() {
                 self.setChartWithDeal(prices: self.prices, priceDeal: self.deals.priceOpenDeal(),
                                       typeDeal: self.deals.typeOpenDeal(), hasAnimate: false)
@@ -260,8 +326,8 @@ class EurUsdViewController: UIViewController {
 
 private func getGradientFilling() -> CGGradient {
 //    let colorTop = UIColor(red: 141/255, green: 133/255, blue: 220/255, alpha: 1).cgColor
-    let colorTop = UIColor(named: "ColorTextWhite")!.cgColor
-    let colorBotton = UIColor(named: "1ColorAquaDark")!.cgColor
+    let colorTop = UIColor(named: "myWhite")!.cgColor
+    let colorBotton = UIColor(named: "myAqua")!.cgColor
     let colorsGradient = [colorTop, colorBotton] as CFArray
     let colorLocations: [CGFloat] = [0.7, 0.0]
 

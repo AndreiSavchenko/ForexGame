@@ -14,7 +14,7 @@ class RoundedButton: UIButton {
         super.awakeFromNib()
         layer.cornerRadius = 5.0
         layer.borderWidth = 1
-        layer.borderColor = UIColor.white.cgColor
+        layer.borderColor = UIColor.init(named: "myWhite")?.cgColor
     }
 
 }

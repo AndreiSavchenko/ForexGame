@@ -74,7 +74,7 @@ class Deals {
 
         try? self.context.save()
 
-        print("deal = \(deal)")
+//        print("deal = \(deal)")
     }
 
     func closeDeals(timeClose: NSDate, priceClose: Double) {
@@ -94,7 +94,7 @@ class Deals {
 
         try? self.context.save()
 
-        print("lastDeal = \(lastDeal)")
+//        print("lastDeal = \(lastDeal)")
     }
 
     func currProfit() -> Int32 {
@@ -132,8 +132,8 @@ class Deals {
     }
 
     func getBalance() -> Int32 {
-        try? fetchedResultsController.performFetch()
-        guard let lastDeal = fetchedResultsController.fetchedObjects?.last else { return 0 }
+        try? fetchedResultsControllerAllClose.performFetch()
+        guard let lastDeal = fetchedResultsControllerAllClose.fetchedObjects?.first else { return 0 }
 //        print("lastDeal.balanceFix = \(lastDeal.balanceFix)")
         return lastDeal.balanceFix
     }

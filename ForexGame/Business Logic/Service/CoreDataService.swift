@@ -58,7 +58,7 @@ class CoreDataService {
 
         try? fetchedResultsController.performFetch()
         guard let count = fetchedResultsController.fetchedObjects?.count, count > 0 else { return [] }
-        print("count = \(count)")
+//        print("count = \(count)")
         for i in 0..<count {
             pointsEurusdAll.append((fetchedResultsController.fetchedObjects?[i].pointPrice)!)
         }

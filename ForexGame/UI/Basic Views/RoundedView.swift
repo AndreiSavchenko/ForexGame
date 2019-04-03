@@ -17,7 +17,7 @@ class RoundedView: UIView {
 
     func border(width: CGFloat) {
         layer.borderWidth = width
-        layer.borderColor = UIColor.white.cgColor
+        layer.borderColor = UIColor.init(named: "myWhite")?.cgColor
     }
 
 }

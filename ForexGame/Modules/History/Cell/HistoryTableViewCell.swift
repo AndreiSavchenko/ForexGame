@@ -16,12 +16,12 @@ class HistoryTableViewCell: UITableViewCell {
     @IBOutlet weak var profitLabel: UILabel!
     @IBOutlet weak var currencyPairLabel: UILabel!
     @IBOutlet weak var typeLabel: UILabel!
+    @IBOutlet weak var balanceLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
 
         cellRoundedView.border(width: 1)
-//        cellRoundedView.backgroundColor = UIColor(named: "AdditionalColor")
     }
 
 //    override func setSelected(_ selected: Bool, animated: Bool) {

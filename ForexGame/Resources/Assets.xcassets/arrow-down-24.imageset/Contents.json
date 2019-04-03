@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "icons8-стрелка-вправо-вниз-в-круге-24.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "buy30.png",
       "scale" : "2x"
     },
     {
