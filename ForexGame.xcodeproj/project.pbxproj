@@ -17,6 +17,8 @@
 		4D81BF5E2250205B00176681 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D81BF5C2250205B00176681 /* HistoryTableViewCell.swift */; };
 		4D81BF5F2250205B00176681 /* HistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D81BF5D2250205B00176681 /* HistoryTableViewCell.xib */; };
 		4D89B4EF2242DFF40015DC4D /* FreeForexAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D89B4EE2242DFF40015DC4D /* FreeForexAPI.swift */; };
+		4DB9AA1822561E8F00266AC3 /* AvatarData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB9AA1622561E8F00266AC3 /* AvatarData+CoreDataClass.swift */; };
+		4DB9AA1922561E8F00266AC3 /* AvatarData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB9AA1722561E8F00266AC3 /* AvatarData+CoreDataProperties.swift */; };
 		4DBEE0FA221D68FF009A4EA4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4DBEE0F9221D68FF009A4EA4 /* Localizable.strings */; };
 		4DBEE0FE221D68FF009A4EA4 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DBEE0FD221D68FF009A4EA4 /* Colors.xcassets */; };
 		4DBEE100221D68FF009A4EA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DBEE0FF221D68FF009A4EA4 /* Assets.xcassets */; };
@@ -48,6 +50,8 @@
 		4D81BF5C2250205B00176681 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		4D81BF5D2250205B00176681 /* HistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryTableViewCell.xib; sourceTree = "<group>"; };
 		4D89B4EE2242DFF40015DC4D /* FreeForexAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FreeForexAPI.swift; path = ForexGame/Models/CoreData/FreeForexAPI.swift; sourceTree = SOURCE_ROOT; };
+		4DB9AA1622561E8F00266AC3 /* AvatarData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AvatarData+CoreDataClass.swift"; sourceTree = "<group>"; };
+		4DB9AA1722561E8F00266AC3 /* AvatarData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AvatarData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		4DBEE0DD221D68FF009A4EA4 /* ForexGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForexGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DBEE0E1221D68FF009A4EA4 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		4DBEE0E3221D68FF009A4EA4 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
@@ -308,6 +312,8 @@
 			isa = PBXGroup;
 			children = (
 				4DF1ED682244380700D9FC6D /* ModelPoint.xcdatamodeld */,
+				4DB9AA1622561E8F00266AC3 /* AvatarData+CoreDataClass.swift */,
+				4DB9AA1722561E8F00266AC3 /* AvatarData+CoreDataProperties.swift */,
 				4DF1ED70224438DD00D9FC6D /* CoreDataStack.swift */,
 				4D00D2B8224D75940075D88B /* Deal+CoreDataClass.swift */,
 				4D00D2B9224D75940075D88B /* Deal+CoreDataProperties.swift */,
@@ -491,6 +497,8 @@
 				4D00D2BA224D75940075D88B /* Deal+CoreDataClass.swift in Sources */,
 				4D81BF582250106200176681 /* HistoryViewController.swift in Sources */,
 				4DF1ED6F2244388100D9FC6D /* Point+CoreDataProperties.swift in Sources */,
+				4DB9AA1822561E8F00266AC3 /* AvatarData+CoreDataClass.swift in Sources */,
+				4DB9AA1922561E8F00266AC3 /* AvatarData+CoreDataProperties.swift in Sources */,
 				4D69085E222B35130086A42D /* EurUsdViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

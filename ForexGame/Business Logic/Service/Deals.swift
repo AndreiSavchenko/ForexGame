@@ -39,7 +39,7 @@ class Deals {
     private lazy var fetchedResultsControllerAllClose: NSFetchedResultsController<Deal> = {
         let fetchRequest: NSFetchRequest<Deal> = Deal.fetchRequest()
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "timeClose", ascending: false)]
-//        fetchRequest.predicate = NSPredicate(format: "timeClose == %@", nil)
+        fetchRequest.predicate = NSPredicate(format: "timeClose != nil")
         let controller = NSFetchedResultsController<Deal>(
             fetchRequest: fetchRequest,
             managedObjectContext: context,
@@ -64,6 +64,7 @@ class Deals {
         } else {
             deal.balanceFix = 10000
         }
+        print("deal = \(deal)")
         try? self.context.save()
     }
 
@@ -93,7 +94,7 @@ class Deals {
         //        for i in 0 ..< countDeals {
         //            print("profit \(i) = \(arrDeals[i].timeClose)")
         //        }
-//        print(arrDeals)
+        print(countDeals)
         return arrDeals
     }
 

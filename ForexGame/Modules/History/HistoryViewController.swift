@@ -21,6 +21,7 @@ class HistoryViewController: UIViewController {
     private lazy var fetchedResultsController: NSFetchedResultsController<Deal> = {
         let fetchRequest: NSFetchRequest<Deal> = Deal.fetchRequest()
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "timeClose", ascending: false)]
+        fetchRequest.predicate = NSPredicate(format: "timeClose != nil")
         let controller = NSFetchedResultsController<Deal>(
             fetchRequest: fetchRequest,
             managedObjectContext: context,
@@ -51,7 +52,7 @@ class HistoryViewController: UIViewController {
     // MARK: - CLEAR HISTORY ORDERS
 
     @IBAction func clearHistoryButton(_ sender: UIButton) {
-        print("clear")
+//        print("clear")
         deals.clearAllDeals()
         try? fetchedResultsController.performFetch()
         self.historyTableView.reloadData()

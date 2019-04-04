@@ -10,6 +10,7 @@ import UIKit
 import Charts
 import Moya
 import Alamofire
+import CoreData
 
 class EurUsdViewController: UIViewController {
 
@@ -23,7 +24,7 @@ class EurUsdViewController: UIViewController {
     let coreDataService = CoreDataService.shared
     let deals = Deals.shared
     var prices: [Double] = []
-    var timeValue: Int = 10
+    var timeValue: Int = 30
     var timer = Timer()
 
     @IBOutlet weak var eurUsdLineChartView: LineChartView!
@@ -36,7 +37,7 @@ class EurUsdViewController: UIViewController {
     @IBOutlet weak var winLossProgressView: UIProgressView!
     @IBOutlet weak var winLossProcLabel: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
-    @IBOutlet weak var iconHumanImageView: UIImageView!
+    @IBOutlet weak var avatarImageView: UIImageView!
 
     // MARK: - viewDidAppear, viewDidLoad
 
@@ -67,12 +68,6 @@ class EurUsdViewController: UIViewController {
             buySellStackView.isHidden = false
             closeStackView.isHidden = true
         }
-
-        // Change image
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action:
-            #selector(imageTapped(tapGestureRecognizer:)))
-        iconHumanImageView.isUserInteractionEnabled = true
-        iconHumanImageView.addGestureRecognizer(tapGestureRecognizer)
     }
 
     // MARK: - OPEN BUY ORDER
@@ -333,13 +328,13 @@ class EurUsdViewController: UIViewController {
         if timeValue > 0 {
             timeValue -= 1
             switch timeValue {
-            case 6...31:
+            case 11...30:
                 timerLabel.textColor = UIColor.init(named: "myAquaLight")
                 timerLabel.text = "\(timeValue)"
-            case 3, 4, 5:
+            case 5...10:
                 timerLabel.textColor = UIColor.init(named: "myOrange")
                 timerLabel.text = "\(timeValue)"
-            case 0, 1, 2:
+            case 0...4:
                 timerLabel.textColor = UIColor.init(named: "myRed")
                 timerLabel.text = "\(timeValue)"
             default: break
@@ -360,33 +355,4 @@ private func getGradientFilling() -> CGGradient {
     let colorLocations: [CGFloat] = [0.7, 0.0]
     return CGGradient.init(colorsSpace: CGColorSpaceCreateDeviceRGB(),
                            colors: colorsGradient, locations: colorLocations)!
-}
-
-// MARK: - EXTENSION UINavigationControllerDelegate, UIImagePickerControllerDelegate
-
-extension EurUsdViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-
-    // selector change image
-    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
-//        let tappedImage = tapGestureRecognizer.view as! UIImageView
-
-        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-            let myPickerController = UIImagePickerController()
-            myPickerController.delegate = self
-            myPickerController.sourceType = .photoLibrary
-            myPickerController.allowsEditing = false
-            self.present(myPickerController, animated: true, completion: nil)
-        }
-    }
-
-    func imagePickerController(_ picker: UIImagePickerController,
-                               didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
-        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            iconHumanImageView.image = image
-        } else {
-            print("Something went wrong")
-        }
-        self.dismiss(animated: true, completion: nil)
-    }
-
 }

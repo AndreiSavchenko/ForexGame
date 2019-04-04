@@ -395,6 +395,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="EURUSD" image="eurusd-tab-24" id="uUD-Fw-GIs"/>
                     <connections>
+                        <outlet property="avatarImageView" destination="QIF-2L-wx5" id="Va8-W8-fZk"/>
                         <outlet property="balanceLabel" destination="52J-sA-hoR" id="J1P-15-Dfl"/>
                         <outlet property="buySellStackView" destination="n1e-K2-i03" id="nQP-1N-Y4u"/>
                         <outlet property="closeStackView" destination="sb8-ZZ-i0v" id="mta-s6-vhd"/>
@@ -402,7 +403,6 @@
                         <outlet property="currentProfitLabel" destination="pGJ-FX-BxG" id="zfw-Iy-ozj"/>
                         <outlet property="dealParamLabel" destination="Wor-H8-pIZ" id="q9M-LU-PhT"/>
                         <outlet property="eurUsdLineChartView" destination="NVw-8f-9Ub" id="vZ8-Dx-xdL"/>
-                        <outlet property="iconHumanImageView" destination="QIF-2L-wx5" id="Va8-W8-fZk"/>
                         <outlet property="timerLabel" destination="613-Sv-9tZ" id="A6z-S0-CVo"/>
                         <outlet property="winLossProcLabel" destination="e3m-uo-1TO" id="HkL-N9-pIt"/>
                         <outlet property="winLossProgressView" destination="YF1-9h-ibM" id="e85-8r-9bn"/>
