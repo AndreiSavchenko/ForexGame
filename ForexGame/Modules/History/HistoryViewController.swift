@@ -12,6 +12,7 @@ import Charts
 
 class HistoryViewController: UIViewController {
 
+    let deals = Deals.shared
     @IBOutlet weak var historyTableView: UITableView!
     @IBOutlet weak var balanceLineChartView: LineChartView!
 
@@ -45,6 +46,16 @@ class HistoryViewController: UIViewController {
         setChartBalance(profit: createArrayBalanceHistory(), hasAnimate: true)
         let cellNib = UINib(nibName: "HistoryTableViewCell", bundle: nil)
         historyTableView.register(cellNib, forCellReuseIdentifier: HistoryTableViewCell.reuseIdentifier)
+    }
+
+    // MARK: - CLEAR HISTORY ORDERS
+
+    @IBAction func clearHistoryButton(_ sender: UIButton) {
+        print("clear")
+        deals.clearAllDeals()
+        try? fetchedResultsController.performFetch()
+        self.historyTableView.reloadData()
+        alertNotOrders()
     }
 
     // MARK: - SET CHART

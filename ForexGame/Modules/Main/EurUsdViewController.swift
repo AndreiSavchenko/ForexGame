@@ -296,7 +296,7 @@ class EurUsdViewController: UIViewController {
         } else {
             lineChartDataSetDeal.colors = [NSUIColor.init(named: "myRed")] as! [NSUIColor]
         }
-        lineChartDataSetDeal.lineWidth = 2.0
+        lineChartDataSetDeal.lineWidth = 3.0
         lineChartDataSetDeal.drawValuesEnabled = false
 
         //--- Chart set ---

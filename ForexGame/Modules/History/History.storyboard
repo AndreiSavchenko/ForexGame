@@ -46,12 +46,24 @@
                                             <segue destination="FRd-fr-5Io" kind="show" id="pbH-5n-sBp"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3iY-5G-Uhh">
+                                        <rect key="frame" x="316" y="0.0" width="34" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" title="clear">
+                                            <color key="titleColor" name="myWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="clearHistoryButton:" destination="Q7p-9v-QZ4" eventType="touchUpInside" id="zp9-YX-ifa"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" name="myAqua"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="3iY-5G-Uhh" secondAttribute="trailing" constant="5" id="ERJ-Vz-QfV"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="JdX-nZ-tEH"/>
                                     <constraint firstAttribute="height" constant="30" id="LtJ-ff-NoK"/>
                                     <constraint firstItem="kJN-AD-dIH" firstAttribute="centerX" secondItem="qVG-oc-JFE" secondAttribute="centerX" id="QAs-vh-Vs4"/>
+                                    <constraint firstItem="3iY-5G-Uhh" firstAttribute="centerY" secondItem="qVG-oc-JFE" secondAttribute="centerY" id="bp3-NU-hFR"/>
                                     <constraint firstItem="kJN-AD-dIH" firstAttribute="centerY" secondItem="qVG-oc-JFE" secondAttribute="centerY" id="cb3-Td-BEj"/>
                                     <constraint firstItem="CTZ-GJ-MOa" firstAttribute="centerY" secondItem="qVG-oc-JFE" secondAttribute="centerY" id="t8p-6d-MHa"/>
                                     <constraint firstItem="CTZ-GJ-MOa" firstAttribute="leading" secondItem="qVG-oc-JFE" secondAttribute="leading" constant="5" id="xC8-k6-NtI"/>

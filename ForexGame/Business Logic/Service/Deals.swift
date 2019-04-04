@@ -137,17 +137,17 @@ class Deals {
         return lastDeal.balanceFix
     }
 
-//    func clearAllDeals() {
-//        try? fetchedResultsControllerAllClose.performFetch()
-//        let deleteFetchRequest: NSFetchRequest<Deal> = Deal.fetchRequest()
-//        deleteFetchRequest.sortDescriptors = [NSSortDescriptor(key: "timeClose", ascending: true)]
-//        let deleteBatchRequest = NSBatchDeleteRequest(fetchRequest:
-//            (deleteFetchRequest as! NSFetchRequest<NSFetchRequestResult>))
-//
-//        do {
-//            try context.execute(deleteBatchRequest)
-//        } catch {
-//            print("Error")
-//        }
-//    }
+    func clearAllDeals() {
+        try? fetchedResultsControllerAllClose.performFetch()
+        let deleteFetchRequest: NSFetchRequest<Deal> = Deal.fetchRequest()
+        deleteFetchRequest.sortDescriptors = [NSSortDescriptor(key: "timeClose", ascending: true)]
+        let deleteBatchRequest = NSBatchDeleteRequest(fetchRequest:
+            (deleteFetchRequest as! NSFetchRequest<NSFetchRequestResult>))
+
+        do {
+            try context.execute(deleteBatchRequest)
+        } catch {
+            print("Error")
+        }
+    }
 }
