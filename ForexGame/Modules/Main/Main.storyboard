@@ -167,10 +167,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dj9-Z1-SdD" userLabel="Chart View" customClass="RoundedView" customModule="ForexGame" customModuleProvider="target">
-                                <rect key="frame" x="10" y="140" width="355" height="84"/>
+                                <rect key="frame" x="10" y="140" width="355" height="358"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NVw-8f-9Ub" customClass="LineChartView" customModule="Charts">
-                                        <rect key="frame" x="5" y="5" width="345" height="74"/>
+                                        <rect key="frame" x="5" y="5" width="345" height="348"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="613-Sv-9tZ">
                                                 <rect key="frame" x="12" y="10" width="50.5" height="21.5"/>
@@ -195,16 +195,16 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vAb-Hc-clK" userLabel="Button View" customClass="RoundedView" customModule="ForexGame" customModuleProvider="target">
-                                <rect key="frame" x="10" y="234" width="355" height="374"/>
+                                <rect key="frame" x="10" y="508" width="355" height="100"/>
                                 <subviews>
                                     <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="n1e-K2-i03" userLabel="Buy Sell Stack View">
-                                        <rect key="frame" x="10" y="10" width="335" height="354"/>
+                                        <rect key="frame" x="10" y="10" width="335" height="80"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="z8C-nl-WTy">
-                                                <rect key="frame" x="0.0" y="0.0" width="162.5" height="354"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="162.5" height="80"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j1Y-97-o2j" customClass="RoundedButton" customModule="ForexGame" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="162.5" height="172"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="162.5" height="35"/>
                                                         <color key="backgroundColor" name="myGreen"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                                         <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -220,7 +220,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OZf-5a-NOH" customClass="RoundedButton" customModule="ForexGame" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="182" width="162.5" height="172"/>
+                                                        <rect key="frame" x="0.0" y="45" width="162.5" height="35"/>
                                                         <color key="backgroundColor" name="myRed"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
@@ -240,19 +240,19 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Aux-au-43P">
-                                                <rect key="frame" x="172.5" y="0.0" width="162.5" height="354"/>
+                                                <rect key="frame" x="172.5" y="0.0" width="162.5" height="80"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="cca-U9-341">
-                                                        <rect key="frame" x="0.0" y="0.0" width="162.5" height="172"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="162.5" height="35"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Current Price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wj1-7M-xvH">
-                                                                <rect key="frame" x="0.0" y="0.0" width="162.5" height="150.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="162.5" height="20.5"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                                 <color key="textColor" name="myWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="download" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nKv-2J-GM7">
-                                                                <rect key="frame" x="0.0" y="151.5" width="162.5" height="20.5"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="download" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nKv-2J-GM7">
+                                                                <rect key="frame" x="0.0" y="21.5" width="162.5" height="13.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <color key="textColor" name="myWhite"/>
                                                                 <nil key="highlightedColor"/>
@@ -261,7 +261,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g0N-Fu-Mdw" customClass="RoundedButton" customModule="ForexGame" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="182" width="162.5" height="172"/>
+                                                        <rect key="frame" x="0.0" y="45" width="162.5" height="35"/>
                                                         <color key="backgroundColor" name="myAquaLight"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
@@ -285,28 +285,28 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="sb8-ZZ-i0v" userLabel="Close Stack View">
-                                        <rect key="frame" x="10" y="10" width="335" height="354"/>
+                                        <rect key="frame" x="10" y="10" width="335" height="80"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="DMy-ej-Sfo">
-                                                <rect key="frame" x="0.0" y="0.0" width="162.5" height="354"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="162.5" height="80"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9GG-Dy-4Ne">
-                                                        <rect key="frame" x="0.0" y="0.0" width="162.5" height="354"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="162.5" height="80"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wor-H8-pIZ">
-                                                                <rect key="frame" x="0.0" y="0.0" width="162.5" height="118"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="162.5" height="26.5"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                                 <color key="textColor" name="myWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Current Profit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nDd-ne-z4d">
-                                                                <rect key="frame" x="0.0" y="118" width="162.5" height="118"/>
+                                                                <rect key="frame" x="0.0" y="26.5" width="162.5" height="27"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                                 <color key="textColor" name="myWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pGJ-FX-BxG" userLabel="Profit">
-                                                                <rect key="frame" x="0.0" y="236" width="162.5" height="118"/>
+                                                                <rect key="frame" x="0.0" y="53.5" width="162.5" height="26.5"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                                 <color key="textColor" name="myWhite"/>
                                                                 <nil key="highlightedColor"/>
@@ -320,10 +320,10 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="WnM-F9-6mn">
-                                                <rect key="frame" x="172.5" y="0.0" width="162.5" height="354"/>
+                                                <rect key="frame" x="172.5" y="0.0" width="162.5" height="80"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XL1-zK-eRu" customClass="RoundedButton" customModule="ForexGame" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="162.5" height="172"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="162.5" height="35"/>
                                                         <color key="backgroundColor" name="myOrange"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                                         <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -339,7 +339,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TZ5-g1-YHq" customClass="RoundedButton" customModule="ForexGame" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="182" width="162.5" height="172"/>
+                                                        <rect key="frame" x="0.0" y="45" width="162.5" height="35"/>
                                                         <color key="backgroundColor" name="myAquaLight"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
@@ -369,6 +369,7 @@
                                     <constraint firstItem="sb8-ZZ-i0v" firstAttribute="top" secondItem="vAb-Hc-clK" secondAttribute="top" constant="10" id="2eT-5u-BeD"/>
                                     <constraint firstAttribute="trailing" secondItem="n1e-K2-i03" secondAttribute="trailing" constant="10" id="6kN-gA-l8b"/>
                                     <constraint firstItem="sb8-ZZ-i0v" firstAttribute="leading" secondItem="vAb-Hc-clK" secondAttribute="leading" constant="10" id="NvM-jF-7bi"/>
+                                    <constraint firstAttribute="height" constant="100" id="V07-34-En2"/>
                                     <constraint firstAttribute="bottom" secondItem="n1e-K2-i03" secondAttribute="bottom" constant="10" id="Y54-QZ-4VB"/>
                                     <constraint firstItem="n1e-K2-i03" firstAttribute="top" secondItem="vAb-Hc-clK" secondAttribute="top" constant="10" id="c19-Gg-B82"/>
                                     <constraint firstAttribute="trailing" secondItem="sb8-ZZ-i0v" secondAttribute="trailing" constant="10" id="fRp-WD-70L"/>
@@ -392,7 +393,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="c8V-W9-52a"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="EURUSD" id="uUD-Fw-GIs"/>
+                    <tabBarItem key="tabBarItem" title="EURUSD" image="eurusd-tab-24" id="uUD-Fw-GIs"/>
                     <connections>
                         <outlet property="balanceLabel" destination="52J-sA-hoR" id="J1P-15-Dfl"/>
                         <outlet property="buySellStackView" destination="n1e-K2-i03" id="nQP-1N-Y4u"/>
@@ -444,6 +445,7 @@
         <image name="arrow-down-24" width="157.09091186523438" height="157.09091186523438"/>
         <image name="arrow-history-24" width="172.80000305175781" height="172.80000305175781"/>
         <image name="arrow-up-24" width="157.09091186523438" height="157.09091186523438"/>
+        <image name="eurusd-tab-24" width="172.80000305175781" height="172.80000305175781"/>
         <image name="iconHuman" width="180" height="180"/>
         <namedColor name="myAqua">
             <color red="0.0" green="0.60392156862745094" blue="0.69019607843137254" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

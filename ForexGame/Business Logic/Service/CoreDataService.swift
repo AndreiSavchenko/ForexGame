@@ -12,6 +12,7 @@ import CoreData
 class CoreDataService {
 
     static let shared = CoreDataService()
+    let maxPoints = 30
     private init() { }
 
     private lazy var context = CoreDataStack.shared.persistentContainer.viewContext
@@ -19,7 +20,7 @@ class CoreDataService {
     private lazy var fetchedResultsController: NSFetchedResultsController<Point> = {
         let fetchRequest: NSFetchRequest<Point> = Point.fetchRequest()
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "pointTime", ascending: false)]
-        fetchRequest.fetchLimit = 20
+        fetchRequest.fetchLimit = maxPoints
         let controller = NSFetchedResultsController<Point>(
             fetchRequest: fetchRequest,
             managedObjectContext: context,
@@ -36,7 +37,7 @@ class CoreDataService {
     func clearPrevious() {
         try? fetchedResultsController.performFetch()
         let current = fetchedResultsController.fetchedObjects ?? []
-        guard current.count == 20 else { return }
+        guard current.count == maxPoints else { return }
         let currentPointTimes: [NSDate] = current.compactMap { $0.pointTime }
 
         let deleteFetchRequest: NSFetchRequest<Point> = Point.fetchRequest()
@@ -62,8 +63,8 @@ class CoreDataService {
             pointsEurusdAll.append((fetchedResultsController.fetchedObjects?[i].pointPrice)!)
         }
         pointsEurusdAll.reverse()
-        if pointsEurusdAll.count<20 {
-            let countAddPoints = 20 - pointsEurusdAll.count
+        if pointsEurusdAll.count < maxPoints {
+            let countAddPoints = maxPoints - pointsEurusdAll.count
             for _ in 0..<countAddPoints {
                 pointsEurusdAll.insert(pointsEurusdAll[0], at: 0)
             }

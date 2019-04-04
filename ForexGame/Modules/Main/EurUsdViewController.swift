@@ -67,6 +67,12 @@ class EurUsdViewController: UIViewController {
             buySellStackView.isHidden = false
             closeStackView.isHidden = true
         }
+
+        // Change image
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action:
+            #selector(imageTapped(tapGestureRecognizer:)))
+        iconHumanImageView.isUserInteractionEnabled = true
+        iconHumanImageView.addGestureRecognizer(tapGestureRecognizer)
     }
 
     // MARK: - OPEN BUY ORDER
@@ -150,7 +156,7 @@ class EurUsdViewController: UIViewController {
             self.prices = self.coreDataService.createArrayPointsEurusd()
             self.updateBalance()
             self.timer.invalidate()
-            self.timeValue = 10
+            self.timeValue = 30
             self.createTimer()
 
             // Open order check
@@ -327,7 +333,7 @@ class EurUsdViewController: UIViewController {
         if timeValue > 0 {
             timeValue -= 1
             switch timeValue {
-            case 6, 7, 8, 9, 10:
+            case 6...31:
                 timerLabel.textColor = UIColor.init(named: "myAquaLight")
                 timerLabel.text = "\(timeValue)"
             case 3, 4, 5:
@@ -354,4 +360,33 @@ private func getGradientFilling() -> CGGradient {
     let colorLocations: [CGFloat] = [0.7, 0.0]
     return CGGradient.init(colorsSpace: CGColorSpaceCreateDeviceRGB(),
                            colors: colorsGradient, locations: colorLocations)!
+}
+
+// MARK: - EXTENSION UINavigationControllerDelegate, UIImagePickerControllerDelegate
+
+extension EurUsdViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+
+    // selector change image
+    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
+//        let tappedImage = tapGestureRecognizer.view as! UIImageView
+
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            let myPickerController = UIImagePickerController()
+            myPickerController.delegate = self
+            myPickerController.sourceType = .photoLibrary
+            myPickerController.allowsEditing = false
+            self.present(myPickerController, animated: true, completion: nil)
+        }
+    }
+
+    func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            iconHumanImageView.image = image
+        } else {
+            print("Something went wrong")
+        }
+        self.dismiss(animated: true, completion: nil)
+    }
+
 }
